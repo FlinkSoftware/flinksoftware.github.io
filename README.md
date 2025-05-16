@@ -2,7 +2,7 @@
 
 ## Tailwind
 ```bash
-npx @tailwindcss/cli -i ./resources/css/app.css -o ./public/css/app.css --watch --minify
+npx @tailwindcss/cli -i ./resources/css/app.css -o ./docs/css/app.css --watch --minify
 ```
 
 ## Jekyll
