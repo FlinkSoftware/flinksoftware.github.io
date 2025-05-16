@@ -1,0 +1,9 @@
+baseurl: ""
+url: "https://flinksoftware"
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
