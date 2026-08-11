@@ -1,40 +1,231 @@
 @import "tailwindcss";
+
 @source "../../public";
 @source "../../public/_layouts";
 @source "../../public/_includes";
 @source not "../../public/_site";
 
+@font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/poppins-v23-latin-600.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/poppins-v23-latin-700.woff2) format('woff2');
+}
+
 @theme {
-  --font-sans: "Helvetica Neue", Helvetica, sans-serif;
-  --font-display: Poppins, sans-serif;
-  --color-primary: #0066bb;
-  --color-secondary: #0082ee;
-  --color-tertiary: #d9e8f5;
-  --color-blue-50: #f0f7ff;
-  --color-blue-100: #e0effe;
-  --color-blue-200: #b9defe;
-  --color-blue-300: #7cc4fd;
-  --color-blue-400: #36a8fa;
-  --color-blue-500: #0c8ceb;
-  --color-blue-600: var(--color-primary);
-  --color-blue-700: #0156a3;
-  --color-blue-800: #064a86;
-  --color-blue-900: #0b3f6f;
-  --color-blue-950: #07274a;
+    --font-sans: "Helvetica Neue", Helvetica, sans-serif;
+    --font-display: Poppins, sans-serif;
+    --color-primary: #0066bb;
+    --color-secondary: #0082ee;
+    --color-tertiary: #d9e8f5;
+    --color-blue-50: #f0f7ff;
+    --color-blue-100: #e0effe;
+    --color-blue-200: #b9defe;
+    --color-blue-300: #7cc4fd;
+    --color-blue-400: #36a8fa;
+    --color-blue-500: #0c8ceb;
+    --color-blue-600: var(--color-primary);
+    --color-blue-700: #0156a3;
+    --color-blue-800: #064a86;
+    --color-blue-900: #0b3f6f;
+    --color-blue-950: #07274a;
+
+    --animate-scramble: progressiveScramble 9s infinite;
+
+
+    --animate-marquee-logos: marquee 48000ms linear infinite;
+    --animate-marquee-photos: marquee 72000ms linear infinite;
 }
 
-@font-face {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url(../fonts/poppins-v23-latin-600.woff2) format('woff2');
+@utility section-mb {
+    /* Default bottom-marge for all sections */
+    @apply mb-25 md:mb-37.5 lg:mb-50;
 }
 
-@font-face {
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(../fonts/poppins-v23-latin-700.woff2) format('woff2');
+@utility section-grid {
+    /* 12-columns grid container */
+    @apply grid grid-cols-12 gap-x-5 max-w-480 mx-auto px-3 md:px-5 xl:px-10 2xl:px-22;
+}
+
+@utility section-heading {
+    /* H2 titles */
+    @apply text-neutral-500 mb-3 text-[32px] leading-[1.1] font-medium md:mb-5 md:text-5xl xl:text-[56px] 2xl:text-[80px];
+}
+
+@utility section-lead {
+    /* Subtitles under H2 */
+    @apply text-xl leading-[1.4] xl:text-2xl 2xl:text-[32px];
+}
+
+@utility section-label-wrapper {
+    @apply top-0 mb-3 md:absolute md:right-full md:mr-5 md:mb-0 2xl:top-3;
+}
+
+@utility section-label-tag {
+    @apply text-neutral-500 font-mono text-xs tracking-wide whitespace-nowrap underline underline-offset-4 2xl:text-xl 2xl:underline-offset-8;
+}
+
+@utility text-color-fade {
+    @apply animate-[color-fade_linear_both] [animation-timeline:view()] [animation-range:entry_5%_cover_40%];
+}
+
+@utility animate-reveal {
+    animation: revealUp 800ms ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+}
+
+@keyframes progressiveScramble {
+    0%, 22% {
+        content: "scale";
+        color: var(--color-zinc-600);
+    }
+    23% {
+        content: "s#%^*";
+        color: var(--color-amber-600);
+    }
+    24% {
+        content: "se!@#$";
+        color: var(--color-amber-600);
+    }
+    25% {
+        content: "sec%^*";
+        color: var(--color-amber-600);
+    }
+    26% {
+        content: "secu!@";
+        color: var(--color-amber-600);
+    }
+    27% {
+        content: "secur#";
+        color: var(--color-amber-600);
+    }
+    28%, 55% {
+        content: "secure";
+        color: var(--color-amber-600);
+    }
+    56% {
+        content: "1##0$@^";
+        color: var(--color-blue-600);
+    }
+    57% {
+        content: "i%@%@/";
+        color: var(--color-blue-600);
+    }
+    58% {
+        content: "inn//<";
+        color: var(--color-blue-600);
+    }
+    59% {
+        content: "inno!@";
+        color: var(--color-blue-600);
+    }
+    60% {
+        content: "innov%^";
+        color: var(--color-blue-600);
+    }
+    61% {
+        content: "innova!";
+        color: var(--color-blue-600);
+    }
+    62% {
+        content: "innovat#";
+        color: var(--color-blue-600);
+    }
+    63%, 88% {
+        content: "innovate";
+        color: var(--color-blue-600);
+    }
+    89% {
+        content: "s!@#$%";
+        color: var(--color-zinc-600);
+    }
+    90% {
+        content: "sc#$%";
+        color: var(--color-zinc-600);
+    }
+    91% {
+        content: "sca!@";
+        color: var(--color-zinc-600);
+    }
+    92% {
+        content: "scal#";
+        color: var(--color-zinc-600);
+    }
+    100% {
+        content: "scale";
+        color: var(--color-zinc-600);
+    }
+}
+
+@keyframes color-fade {
+    from {
+        color: var(--color-neutral-500);
+    }
+    to {
+        color: var(--color-primary);
+    }
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@layer base {
+    body {
+        color: var(--color-neutral-900);
+        @apply antialiased;
+    }
+
+    a {
+        @apply transition-colors duration-300;
+    }
+
+    a:hover {
+        @apply text-primary;
+    }
+}
+
+@layer utilities {
+    .animate-progressive-scramble::after {
+        content: "scale";
+        animation: var(--animate-scramble);
+        display: inline-block;
+        min-width: 8ch;
+    }
+
+    .animate-marquee-logos, .animate-marquee-photos {
+        will-change: transform;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-reveal {
+        animation: none !important;
+    }
 }

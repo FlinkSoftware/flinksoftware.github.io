@@ -1,332 +1,674 @@
 ---
-title: Flink Software — High-Performing Software Experts
+title: Flink Software | Solution Architecture & Software Engineering
 ---
 
-<div class="bg-white">
-  <main>
-    <div class="relative isolate">
-      <svg
-        class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)] stroke-gray-200"
-        aria-hidden="true">
-        <defs>
-          <pattern
-            id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-            width="200"
-            height="200"
-            x="50%"
-            y="-1"
-            patternUnits="userSpaceOnUse">
-            <path d="M.5 200V.5H200" fill="none" />
-          </pattern>
-        </defs>
-        <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-          <path
-            d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-            stroke-width="0" />
-        </svg>
-        <rect width="100%" height="100%" stroke-width="0" fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
-      </svg>
-      <!--      <div-->
-      <!--        class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"-->
-      <!--        aria-hidden="true">-->
-      <!--        <div-->
-      <!--          class="aspect-801/1036 bg-linear-to-tr from-tertiary to-primary w-[50.0625rem] opacity-30"-->
-      <!--          style="-->
-      <!--            clip-path: polygon(-->
-      <!--              63.1% 29.5%,-->
-      <!--              100% 17.1%,-->
-      <!--              76.6% 3%,-->
-      <!--              48.4% 0%,-->
-      <!--              44.6% 4.7%,-->
-      <!--              54.5% 25.3%,-->
-      <!--              59.8% 49%,-->
-      <!--              55.2% 57.8%,-->
-      <!--              44.4% 57.2%,-->
-      <!--              27.8% 47.9%,-->
-      <!--              35.1% 81.5%,-->
-      <!--              0% 97.7%,-->
-      <!--              39.2% 100%,-->
-      <!--              35.2% 81.4%,-->
-      <!--              97.2% 52.8%,-->
-      <!--              63.1% 29.5%-->
-      <!--            );-->
-      <!--          "></div>-->
-      <!--      </div>-->
-      <div class="overflow-hidden">
-        <div class="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32">
-          <div class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-            <div class="relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl">
-              <h1 class="font-display text-5xl font-bold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-                High-Performing Software Experts
-              </h1>
-              <p class="mt-8 text-lg text-pretty text-gray-500 sm:max-w-md sm:text-xl/8 lg:max-w-none">
-                Onze <span class="font-medium">engineers</span> vertalen jouw complexe
-                <span class="font-medium">IT-uitdagingen</span> naar
-                <span class="font-medium">softwareoplossingen</span> — robuust, schaalbaar en onderhoudbaar.
-              </p>
-              <div class="mt-10 flex items-center gap-x-6">
-                <a
-                  href="/expertises"
-                  class="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-                  >Onze expertises</a
-                >
-                <a href="/contact" class="text-sm/6 font-semibold text-gray-900"
-                  >Direct contact <span aria-hidden="true">→</span></a
-                >
-              </div>
-            </div>
-            <div class="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
-              <div
-                class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-                <div class="relative">
-                  <img
-                    src="/img/thumbnail-hq.webp"
-                    alt="Flink HQ"
-                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                    width="176"
-                    height="264" />
-                  <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset"></div>
-                </div>
-              </div>
-              <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                <div class="relative">
-                  <img
-                    src="/img/thumbnail-engineers.webp"
-                    alt="Java DevOps Engineers"
-                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                    width="176"
-                    height="264" />
-                  <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset"></div>
-                </div>
-                <div class="relative">
-                  <img
-                    src="/img/thumbnail-beer-mbp.webp"
-                    alt="Flink Beer met MacBook Pro"
-                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                    width="176"
-                    height="264" />
-                  <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset"></div>
-                </div>
-              </div>
-              <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                <div class="relative">
-                  <img
-                    src="/img/thumbnail-beer-kantoor.webp"
-                    alt="Flink Beer op kantoor"
-                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                    width="176"
-                    height="264" />
-                  <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset"></div>
-                </div>
-                <div class="relative">
-                  <img
-                    src="/img/thumbnail-flink-tas.webp"
-                    alt="Flink Software tas in het wild"
-                    class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                    width="176"
-                    height="264" />
-                  <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-gray-900/10 ring-inset"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+<main>
+  <section class="relative z-30 h-screen max-h-[2000px]" aria-label="Hero">
+    <div class="flex h-full items-center justify-center">
+      <div class="section-grid w-full">
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+          <h1
+            class="text-7xl leading-[1.1] font-semibold tracking-tight text-zinc-900 md:text-5xl lg:text-7xl xl:text-8xl">
+            IT Experts
+            <br />
+            driven to
+            <br class="sm:hidden" />
+            <span class="animate-progressive-scramble" aria-hidden="true"></span>
+            <span class="sr-only text-primary">innovate</span>
+            <br />
+            <span class="block md:text-right">your business.</span>
+          </h1>
         </div>
       </div>
     </div>
-  </main>
-</div>
-<div class="bg-white py-24 sm:py-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-      <div class="col-span-2">
-        <h2 class="font-display text-base/7 font-semibold text-primary">Hello, World!</h2>
-        <p class="font-display text-4xl font-bold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-          Wij zijn Flink&nbsp;Software
-        </p>
+  </section>
+  <section class="relative z-15 section-mb flex animate-reveal" aria-label="Kerncompetenties">
+    <div class="section-grid w-full">
+      <div class="@container col-span-12 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4">
+        <h2
+          class="bg-linear-to-r from-blue-300 via-primary to-blue-200 bg-clip-text pb-2 text-[15cqi] leading-[1.1] font-bold text-balance text-transparent">
+          Consultancy.
+          <br />
+          Architecture.
+          <br />
+          Engineering.
+        </h2>
       </div>
-      <dl class="col-span-3 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2">
-        <div>
-          <dt class="font-display text-lg/8 font-semibold text-gray-900">
-            <div class="mb-6 flex size-10 items-center justify-center rounded-lg bg-primary">
-              <svg
-                class="size-6 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                data-slot="icon">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-              </svg>
-            </div>
-            Experts
+    </div>
+  </section>
+  <section id="vision" class="section-grid section-mb" aria-labelledby="vision-label">
+    <div class="relative col-span-12 md:col-span-10 md:col-start-3 xl:col-span-6 xl:col-start-2">
+      <div class="section-label-wrapper">
+        <span class="section-label-tag" id="vision-label"> 01 Vision </span>
+      </div>
+      <h2 class="headline section-heading">
+        Wij vertalen complexe IT-uitdagingen naar
+        <span class="text-color-fade">robuuste architectuur en software.</span>
+      </h2>
+    </div>
+    <div class="col-span-12 md:col-span-6 xl:col-span-5 xl:col-start-3">
+      <p class="section-lead">
+        We ontwerpen, bouwen en optimaliseren bedrijfskritische applicaties binnen enterprise landschappen, waarbij we
+        doorgaan waar anderen vastlopen.
+      </p>
+    </div>
+    <div class="col-span-12 mt-5 animate-reveal p-6 md:col-span-6 md:mt-10 xl:col-span-5 xl:col-start-8 xl:-mt-15">
+      <img
+        src="/img/vision.webp"
+        alt="Lage-hoekfoto van moderne, glazen kantoorgebouwen die reflecteren in een blauwe lucht met wolken."
+        loading="lazy"
+        decoding="async"
+        width="667"
+        height="375"
+        class="h-full w-full rounded-[20px] object-cover" />
+    </div>
+  </section>
+  <section id="capabilities" class="section-grid section-mb" aria-labelledby="capabilities-label">
+    <div class="relative col-span-12 md:col-span-10 md:col-start-3 xl:col-span-8 xl:col-start-4">
+      <div class="section-label-wrapper">
+        <span class="section-label-tag" id="capabilities-label"> 02 Capabilities </span>
+      </div>
+      <h2 class="headline section-heading">
+        We beheersen de volledige keten, van
+        <span class="text-color-fade">inceptie tot productie.</span>
+      </h2>
+    </div>
+    <div class="col-span-12 md:col-span-8 md:col-start-3 xl:col-span-5 xl:col-start-4">
+      <p class="mb-10 section-lead">
+        Wij ontwerpen, bouwen en schalen de IT-landschappen van morgen, van strategische architectuur tot zwaarbelaste
+        backend-systemen.
+      </p>
+    </div>
+    <div class="col-span-12 md:col-span-10 xl:col-span-8 xl:col-start-3">
+      <dl class="grid grid-cols-1 gap-x-8 gap-y-10 text-sm sm:grid-cols-2 md:text-base 2xl:text-xl">
+        <div class="relative pl-9">
+          <dt class="inline font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="absolute top-0.5 left-0 size-5 text-neutral-500"
+              aria-hidden="true"
+              focusable="false">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+            </svg>
+            Solution Architecture.
           </dt>
-          <dd class="mt-1 text-base/7 text-gray-600">
-            Experts in software engineering met de modernste tech stack — van Java en Spring Boot tot Kubernetes en
-            cloud
+          <dd class="inline text-neutral-800">
+            We vertalen complexe businessdoelen naar een toekomstbestendig IT-landschap. Hiermee leggen we een
+            schaalbaar en robuust fundament voor jouw enterprise-applicaties.
           </dd>
         </div>
-        <div>
-          <dt class="text-lg/8 font-semibold text-gray-900">
-            <div class="mb-6 flex size-10 items-center justify-center rounded-lg bg-primary">
-              <svg
-                class="size-6 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                data-slot="icon">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-              </svg>
-            </div>
-            Partnerschap
+        <div class="relative pl-9">
+          <dt class="inline font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="absolute top-0.5 left-0 size-5 text-neutral-500"
+              aria-hidden="true"
+              focusable="false">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+            </svg>
+            Software Engineering.
           </dt>
-          <dd class="mt-1 text-base/7 text-gray-600">
-            Meer dan samenwerken: wij zijn je softwarepartner — gedreven, enthousiast en betrokken
+          <dd class="inline text-neutral-800">
+            Van verouderde monoliet naar moderne microservices. Met Java en Spring Boot bouwen we zwaarbelaste systemen
+            van absolute topkwaliteit.
           </dd>
         </div>
-        <div>
-          <dt class="text-lg/8 font-semibold text-gray-900">
-            <div class="mb-6 flex size-10 items-center justify-center rounded-lg bg-primary">
-              <svg
-                class="size-6 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                data-slot="icon">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605" />
-              </svg>
-            </div>
-            Whiteboard t/m productie
+        <div class="relative pl-9">
+          <dt class="inline font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="absolute top-0.5 left-0 size-5 text-neutral-500"
+              aria-hidden="true"
+              focusable="false">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z" />
+            </svg>
+            Cloud &amp; DevOps.
           </dt>
-          <dd class="mt-1 text-base/7 text-gray-600">
-            We staan naast je vanaf uitdaging t/m oplossing — van consultancy en architectuur tot engineering en DevOps
+          <dd class="inline text-neutral-800">
+            We bouwen cloud-native omgevingen met Kubernetes en strakke CI/CD-pipelines. Dit garandeert een veilige,
+            geautomatiseerde en schaalbare release-flow.
           </dd>
         </div>
-        <div>
-          <dt class="text-lg/8 font-semibold text-gray-900">
-            <div class="mb-6 flex size-10 items-center justify-center rounded-lg bg-primary">
-              <svg
-                class="size-6 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                data-slot="icon">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-              </svg>
-            </div>
-            Elke dag beter
+        <div class="relative pl-9">
+          <dt class="inline font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="absolute top-0.5 left-0 size-5 text-neutral-500"
+              aria-hidden="true"
+              focusable="false">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3" />
+            </svg>
+            Complexe Datamigraties.
           </dt>
-          <dd class="mt-1 text-base/7 text-gray-600">
-            Elke dag opnieuw dagen we onszelf uit om de grenzen te verleggen en verwachtingen te overtreffen
+          <dd class="inline text-neutral-800">
+            We orkestreren grootschalige, risicovolle migraties met extreme precisie. Zo garanderen we een geruisloze
+            transformatie zonder downtime.
+          </dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="absolute top-0.5 left-0 size-5 text-neutral-500"
+              aria-hidden="true"
+              focusable="false">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+            </svg>
+            Enterprise Security.
+          </dt>
+          <dd class="inline text-neutral-800">
+            Veiligheid vormt de basis van elk IT-landschap (<span class="italic">security by design</span>). We
+            beveiligen applicaties, structureren Identity & Access Management en borgen naleving van ISO 27001 en NIS2.
+          </dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="inline font-medium">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="absolute top-0.5 left-0 size-5 text-neutral-500"
+              aria-hidden="true"
+              focusable="false">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+            </svg>
+            Artificial Intelligence.
+          </dt>
+          <dd class="inline text-neutral-800">
+            We integreren AI-oplossingen veilig en naadloos binnen jouw bestaande landschap. Zo innoveer je processen
+            zonder concessies aan stabiliteit of dataprivacy.
           </dd>
         </div>
       </dl>
     </div>
-  </div>
-</div>
-<div class="overflow-hidden bg-white py-24 sm:py-32">
-  <div class="mx-auto max-w-7xl md:px-6 lg:px-8">
-    <div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
-      <div class="px-6 lg:px-0 lg:pt-4 lg:pr-4">
-        <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-          <h2 class="font-display text-base/7 font-semibold text-primary">Onze drijfveer</h2>
-          <p class="mt-2 font-display text-4xl font-bold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-            Pure liefde voor het vak
-          </p>
-          <p class="mt-6 text-lg/8 text-gray-600">
-            Wij krijgen energie van complexe uitdagingen. En niets geeft ons meer voldoening dan die te vertalen naar
-            <span class="font-medium">robuuste</span>, <span class="font-medium">schaalbare</span> en
-            <span class="font-medium">onderhoudbare</span> softwareoplossingen.
-          </p>
-          <p class="mt-6 text-lg/8 text-gray-600">
-            We zijn er heilig van overtuigd dat goede software hét absolute verschil maakt voor elke organisatie, van de
-            kleinste startup tot de grootste multinational. En daar willen wij een cruciale rol in spelen.
-          </p>
-          <div class="mt-8">
-            <a
-              href="/ons-verhaal"
-              class="inline-flex rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              >Ons verhaal</a
-            >
-          </div>
+  </section>
+  <section id="impact" class="relative section-mb py-5 md:py-10 xl:py-16" aria-labelledby="impact-label">
+    <div
+      class="pointer-events-none absolute inset-y-0 left-1/2 z-[-1] w-full max-w-[1832px] -translate-x-1/2 animate-reveal bg-slate-100 opacity-100 md:w-[calc(100%-20px)] md:rounded-3xl xl:w-[calc(100%-40px)] 2xl:w-[calc(100%-88px)]"></div>
+    <div class="section-grid">
+      <div class="relative col-span-12 md:col-span-10 md:col-start-3 xl:col-span-6 xl:col-start-3">
+        <div class="section-label-wrapper">
+          <span class="section-label-tag text-neutral-600" id="impact-label"> 03 Impact </span>
         </div>
+        <h2 class="section-heading">
+          Absolute focus op waarde voor
+          <span class="text-color-fade">onze opdrachtgevers.</span>
+        </h2>
       </div>
-      <div class="sm:px-6 lg:px-0">
+      <div class="col-span-12 mb-10 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-2">
+        <p class="section-lead">
+          Met een bewezen track record van de overheid en finance tot de energiesector werken we puur resultaatgericht
+          en leveren we direct toegevoegde waarde.
+        </p>
+      </div>
+    </div>
+    <div class="animate-reveal overflow-hidden">
+      <ul
+        class="grid snap-x snap-mandatory scroll-pl-3 scrollbar-none auto-cols-[80vw] grid-flow-col gap-4 overflow-x-auto px-3 md:scroll-pl-5 md:auto-cols-[40vw] md:gap-6 md:px-5 lg:mx-auto lg:max-w-[1744px] lg:snap-none lg:auto-cols-auto lg:grid-flow-row lg:grid-cols-3 lg:overflow-visible xl:px-10 2xl:px-22">
+        <li>
+          <article class="flex h-full snap-start flex-col">
+            <div class="aspect-square overflow-hidden rounded-t-[20px]">
+              <img
+                src="/img/impact-1.webp"
+                alt="Architecturale close-up van de hoek van een modern, wit gebouw met een patroon van grote, ronde, diepliggende ramen tegen een strakblauwe lucht."
+                loading="lazy"
+                decoding="async"
+                width="507"
+                height="507"
+                class="h-full w-full object-cover brightness-95 saturate-90 transition-transform duration-500 hover:scale-105" />
+            </div>
+            <div class="flex flex-1 rounded-b-[20px] bg-white p-5">
+              <p class="text-sm md:text-base 2xl:text-xl">
+                Ontwerp, ontwikkeling en executie van een meerjarige datamigratie van 3 petabyte aan Nederlands digitaal
+                erfgoed bij de Rijksoverheid:
+                <span class="font-medium">zero data loss met volledige bedrijfscontinuïteit.</span>
+              </p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex h-full snap-start flex-col">
+            <div class="aspect-square overflow-hidden rounded-t-[20px]">
+              <img
+                src="/img/impact-2.webp"
+                alt="Minimalistische architectuurfoto van donkerblauwe, blokvormige kantoorgebouwen tegen een egale, lichtblauwe lucht."
+                loading="lazy"
+                decoding="async"
+                width="507"
+                height="507"
+                class="h-full w-full object-cover brightness-95 saturate-90 transition-transform duration-500 hover:scale-105" />
+            </div>
+            <div class="flex flex-1 rounded-b-[20px] bg-white p-5">
+              <p class="text-sm md:text-base 2xl:text-xl">
+                Splitsing van een monoliet naar microservices op OpenShift met uniforme CI/CD-pipelines bij een
+                internationale bank:
+                <span class="font-medium">toekomstbestendige schaalbaarheid met de hoogste security-standaarden.</span>
+              </p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="flex h-full snap-start flex-col">
+            <div class="aspect-square overflow-hidden rounded-t-[20px]">
+              <img
+                src="/img/impact-3.webp"
+                alt="Architectonisch detail van grote, gele pijpleidingen aan de zijkant van een modern gebouw, tegen een heldere, blauwe lucht."
+                loading="lazy"
+                decoding="async"
+                width="507"
+                height="507"
+                class="h-full w-full object-cover brightness-95 saturate-90 transition-transform duration-500 hover:scale-105" />
+            </div>
+            <div class="flex flex-1 rounded-b-[20px] bg-white p-5">
+              <p class="text-sm md:text-base 2xl:text-xl">
+                Architectuur, bouw en DevOps-realisatie van een smart-grid applicatie met Java en Spring Boot bij een
+                landelijke netbeheerder:
+                <span class="font-medium">datagedreven capaciteitssturing tegen netcongestie.</span>
+              </p>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="clients" class="section-mb overflow-hidden" aria-labelledby="clients-label">
+    <div class="section-grid mb-18.75">
+      <div class="relative col-span-12 md:col-span-9 md:col-start-3 xl:col-span-7 xl:col-start-3">
+        <div class="section-label-wrapper">
+          <span class="section-label-tag" id="clients-label">04 Clients</span>
+        </div>
+        <h2 class="section-heading">
+          Gekozen door de meest <span class="text-color-fade">veeleisende opdrachtgevers.</span>
+        </h2>
+      </div>
+      <div class="col-span-12 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-3">
+        <p class="text-sm md:text-base 2xl:text-xl">
+          Wij zijn dé softwarepartner voor organisaties die de ruggengraat van onze maatschappij en economie vormen. Ze
+          vertrouwen op onze volledige executiekracht over de gehele keten: van het herontwerpen van complexe
+          IT-landschappen tot de realisatie van robuuste, veilige en bedrijfskritische applicaties.
+        </p>
+      </div>
+    </div>
+    <div
+      class="grid grid-cols-12 gap-x-4 gap-y-15 px-4 md:hidden [&_img]:w-auto [&_img]:max-w-40 [&_img]:object-contain [&_img]:opacity-50 [&_img]:grayscale">
+      <div class="col-span-6 flex items-center justify-center">
+        <img src="/img/ing.svg" alt="ING" loading="lazy" decoding="async" width="118" height="30" class="max-h-7.5" />
+      </div>
+      <div class="col-span-6 flex items-center justify-center">
+        <img
+          src="/img/belastingdienst.svg"
+          alt="Belastingdienst"
+          loading="lazy"
+          decoding="async"
+          width="86"
+          height="48"
+          class="h-12" />
+      </div>
+      <div class="col-span-6 flex items-center justify-center">
+        <img
+          src="/img/alliander.webp"
+          alt="Alliander"
+          loading="lazy"
+          decoding="async"
+          width="78"
+          height="30"
+          class="max-h-7.5" />
+      </div>
+      <div class="col-span-6 flex items-center justify-center">
+        <img
+          src="/img/s2f.svg"
+          alt="Service2Fruit"
+          loading="lazy"
+          decoding="async"
+          width="160"
+          height="27"
+          class="max-h-7.5" />
+      </div>
+      <div class="col-span-6 flex items-center justify-center">
+        <img
+          src="/img/kb.svg"
+          alt="Koninklijke Bibliotheek"
+          loading="lazy"
+          decoding="async"
+          width="104"
+          height="30"
+          class="max-h-7.5" />
+      </div>
+      <div class="col-span-6 flex items-center justify-center">
+        <img
+          src="/img/bmg.svg"
+          alt="Bank Mendes Gans"
+          loading="lazy"
+          decoding="async"
+          width="160"
+          height="16"
+          class="max-h-7.5" />
+      </div>
+      <div class="col-span-6 flex items-center justify-center">
+        <img
+          src="/img/kadaster.svg"
+          alt="Kadaster"
+          loading="lazy"
+          decoding="async"
+          width="52"
+          height="40"
+          class="max-h-10" />
+      </div>
+      <div class="col-span-6 flex items-center justify-center">
+        <img src="/img/gpx.svg" alt="GPX" loading="lazy" decoding="async" width="68" height="40" class="max-h-10" />
+      </div>
+      <div class="col-span-6 flex items-center justify-center">
+        <img
+          src="/img/planon.svg"
+          alt="Planon"
+          loading="lazy"
+          decoding="async"
+          width="113"
+          height="30"
+          class="max-h-7.5" />
+      </div>
+    </div>
+    <div class="hidden md:block">
+      <div class="w-full overflow-hidden">
         <div
-          class="relative isolate overflow-hidden bg-primary px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
+          class="flex w-max animate-marquee-logos items-center gap-19 hover:[animation-play-state:paused] motion-reduce:animate-none md:gap-25 2xl:gap-35">
+          {% for i in (1..3) %}
           <div
-            class="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-white ring-inset"
-            aria-hidden="true"></div>
-          <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-            <img
-              src="/img/logo-op-trui.webp"
-              alt="Flink Software logo op trui"
-              width="912"
-              height="512.5"
-              class="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-white/10" />
+            class="flex shrink-0 items-center gap-19 md:gap-25 2xl:gap-35 [&_img]:opacity-50 [&_img]:grayscale [&_img]:transition-all [&_img]:duration-300 [&_img:hover]:opacity-100 [&_img:hover]:grayscale-0"
+            {%
+            if
+            i>
+            1 %}aria-hidden="true"{% endif %}>
+            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
+              <img
+                src="/img/ing.svg"
+                alt="ING"
+                loading="lazy"
+                decoding="async"
+                width="118"
+                height="30"
+                class="h-full w-auto object-contain" />
+            </div>
+            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
+              <img
+                src="/img/belastingdienst.svg"
+                alt="Belastingdienst"
+                loading="lazy"
+                decoding="async"
+                width="633"
+                height="123"
+                class="h-full w-auto object-contain" />
+            </div>
+            <div class="flex h-[30px] shrink-0 items-center justify-center 2xl:h-10">
+              <img
+                src="/img/alliander.webp"
+                alt="Alliander"
+                loading="lazy"
+                decoding="async"
+                width="78"
+                height="30"
+                class="h-full w-auto object-contain" />
+            </div>
+            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
+              <img
+                src="/img/s2f.svg"
+                alt="Service2Fruit"
+                loading="lazy"
+                decoding="async"
+                width="179"
+                height="30"
+                class="h-full w-auto object-contain" />
+            </div>
+            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
+              <img
+                src="/img/kb.svg"
+                alt="Koninklijke Bibliotheek"
+                loading="lazy"
+                decoding="async"
+                width="104"
+                height="30"
+                class="h-full w-auto object-contain" />
+            </div>
+            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
+              <img
+                src="/img/bmg.svg"
+                alt="Bank Mendes Gans"
+                loading="lazy"
+                decoding="async"
+                width="308"
+                height="30"
+                class="h-full w-auto object-contain" />
+            </div>
+            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
+              <img
+                src="/img/kadaster.svg"
+                alt="Kadaster"
+                loading="lazy"
+                decoding="async"
+                width="39"
+                height="30"
+                class="h-full w-auto object-contain" />
+            </div>
+            <div class="flex h-[30px] shrink-0 items-center justify-center 2xl:h-10">
+              <img
+                src="/img/gpx.svg"
+                alt="GPX"
+                loading="lazy"
+                decoding="async"
+                width="51"
+                height="30"
+                class="h-full w-auto object-contain" />
+            </div>
+            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
+              <img
+                src="/img/planon.svg"
+                alt="Planon"
+                loading="lazy"
+                decoding="async"
+                width="51"
+                height="30"
+                class="h-full w-auto object-contain" />
+            </div>
           </div>
-          <div
-            class="pointer-events-none absolute inset-0 ring-1 ring-black/10 ring-inset sm:rounded-3xl"
-            aria-hidden="true"></div>
+          {% endfor %}
         </div>
       </div>
     </div>
-  </div>
-</div>
-{% include services.html %} {% include clients.html %} {% include nljug.html %}
-<div class="bg-white py-24 md:py-32">
-  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-15 px-6 md:grid-cols-4 lg:px-8">
-    <div class="md:col-span-3">
-      <h2 class="font-display text-4xl font-bold tracking-tight text-pretty text-gray-900 sm:text-5xl">Meer weten?</h2>
-      <p class="mt-6 text-lg/8 text-gray-600">
-        We vertellen je graag meer over Flink Software. Bel ons en vraag naar Tonny, of e-mail hem direct.
-      </p>
-      <div class="mt-10 flex flex-wrap items-center gap-6">
-        <a
-          href="tel:0246757990"
-          class="inline-flex items-center gap-x-1.5 rounded-md bg-green-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="-ml-0.5 size-4">
-            <path
-              fill-rule="evenodd"
-              d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
-              clip-rule="evenodd" />
-          </svg>
-          024 - 675 79 90
-        </a>
-        <a
-          href="mailto:tonny@flinksoftware.com"
-          class="inline-flex items-center gap-x-1.5 text-sm/6 font-semibold text-gray-900">
-          <svg class="-ml-0.5 size-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-          </svg>
-          tonny@flinksoftware.com
-        </a>
+  </section>
+  <section id="company" class="relative section-mb py-5 md:py-10" aria-labelledby="company-label">
+    <div
+      class="pointer-events-none absolute inset-y-0 left-1/2 z-[-1] w-full max-w-[1832px] -translate-x-1/2 animate-reveal bg-slate-100 opacity-100 md:w-[calc(100%-20px)] md:rounded-3xl xl:w-[calc(100%-40px)] 2xl:w-[calc(100%-88px)]"></div>
+    <div class="section-grid">
+      <div class="relative col-span-12 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4">
+        <div class="section-label-wrapper">
+          <span id="company-label" class="section-label-tag text-neutral-600">05 Company</span>
+        </div>
+        <h2 class="section-heading">
+          <span class="text-color-fade">Technisch leiderschap</span>
+          is ons DNA.
+        </h2>
+      </div>
+      <div class="col-span-12 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4">
+        <p class="section-lead">
+          Flink Software is opgericht door de broers Adis Ćorović en Tonny Garić vanuit één gedeelde overtuiging:
+          bedrijfskritische IT vraagt om puur technisch vakmanschap. Als trotse NLJUG Business Partner combineren we
+          diepgaande theorie met exacte executiekracht. Wij leveren de technische standaard waar anderen op bouwen.
+        </p>
+      </div>
+      <div class="col-span-12 mt-5 md:col-span-2 md:col-start-11 md:mt-10 xl:col-span-2 xl:col-start-11 xl:-mt-15">
+        <img
+          class="aspect-square w-full max-w-[120px] animate-reveal object-contain"
+          src="/img/nljug.webp"
+          alt="Trotse Businesspartner van de Nederlandse Java User Group (NLJUG)"
+          loading="lazy"
+          decoding="async"
+          width="200"
+          height="200" />
       </div>
     </div>
-    <img
-      class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover md:order-first"
-      src="/img/tonny.webp"
-      alt="Tonny Garić" />
-  </div>
-</div>
+    <div class="mt-10 md:mt-20">
+      <div class="w-full animate-reveal overflow-hidden">
+        <div class="flex w-max animate-marquee-photos items-start gap-8 motion-reduce:animate-none">
+          {% for i in (1..3) %}
+          <div
+            class="w-[75vw] shrink-0 overflow-hidden rounded-[10px] md:w-[40vw] xl:w-[30vw] 2xl:w-auto 2xl:rounded-[20px]">
+            <img
+              src="/img/company-1.webp"
+              alt="Drie mensen in gesprek op de drukbezochte J-Spring 2025, waarbij een vrouw een t-shirt met het Flink Software logo draagt."
+              loading="lazy"
+              decoding="async"
+              width="435"
+              height="573"
+              class="h-auto w-full 2xl:w-auto" />
+          </div>
+          <div
+            class="w-[75vw] shrink-0 overflow-hidden rounded-[10px] md:w-[40vw] xl:w-[30vw] 2xl:w-auto 2xl:rounded-[20px]">
+            <img
+              src="/img/company-2.webp"
+              alt="Adis Ćorović in een zwarte jas in gesprek met een vrouw met grijs, krullend haar, terwijl zij hem een badge en een keycord overhandigt op J-Spring 2026."
+              loading="lazy"
+              decoding="async"
+              width="573"
+              height="435"
+              class="h-auto w-full 2xl:w-auto" />
+          </div>
+          <div
+            class="w-[75vw] shrink-0 overflow-hidden rounded-[10px] md:w-[40vw] xl:w-[30vw] 2xl:w-auto 2xl:rounded-[20px]">
+            <img
+              src="/img/company-3.webp"
+              alt="Adis Ćorović zit in het publiek in een donkere zaal met theaterstoelen en luistert aandachtig naar een presentatie van een spreker op J-Spring 2026."
+              loading="lazy"
+              decoding="async"
+              width="435"
+              height="435"
+              class="h-auto w-full 2xl:w-auto" />
+          </div>
+          <div
+            class="w-[75vw] shrink-0 overflow-hidden rounded-[10px] md:w-[40vw] xl:w-[30vw] 2xl:w-auto 2xl:rounded-[20px]">
+            <img
+              src="/img/company-4.webp"
+              alt="Een man en een vrouw staan in gesprek aan een oranje statafel op J-Spring 2025, voor een blauwe banner met het Flink Software logo."
+              loading="lazy"
+              decoding="async"
+              width="435"
+              height="573"
+              class="h-auto w-full 2xl:w-auto" />
+          </div>
+          <div
+            class="w-[75vw] shrink-0 overflow-hidden rounded-[10px] md:w-[40vw] xl:w-[30vw] 2xl:w-auto 2xl:rounded-[20px]">
+            <img
+              src="/img/company-5.webp"
+              alt="Tonny Garić in een Flink Software t-shirt staat lachend in gesprek met een bezoeker op een drukbezochte J-Spring 2025."
+              loading="lazy"
+              decoding="async"
+              width="573"
+              height="435"
+              class="h-auto w-full 2xl:w-auto" />
+          </div>
+          <div
+            class="w-[75vw] shrink-0 overflow-hidden rounded-[10px] md:w-[40vw] xl:w-[30vw] 2xl:w-auto 2xl:rounded-[20px]">
+            <img
+              src="/img/company-6.webp"
+              alt="Overzichtsfoto van een drukbezochte beursvloer van J-Spring 2025, met aan de linkerkant de blauwe stand van Flink Software."
+              loading="lazy"
+              decoding="async"
+              width="573"
+              height="435"
+              class="h-auto w-full 2xl:w-auto" />
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-mb">
+    <div
+      class="mx-auto grid max-w-480 grid-cols-12 items-center gap-x-5 gap-y-15 px-3 md:px-5 lg:px-5 xl:px-10 2xl:px-22">
+      <div class="col-span-12 md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-5">
+        <h2 class="section-heading">Tijd voor een gerichte <span class="text-color-fade">expertise-injectie?</span></h2>
+        <p class="mb-8 section-lead">Schakel direct om de diepte in te gaan.</p>
+        <div class="flex flex-wrap items-center gap-6">
+          <a
+            href="tel:+31246757990"
+            class="inline-flex items-center gap-2 rounded-full bg-green-700 px-6 py-3 text-base font-medium text-white hover:bg-green-800">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="-ml-0.5 size-5" aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                clip-rule="evenodd"></path>
+            </svg>
+            024 - 675 79 90
+          </a>
+          <a href="mailto:info@flinksoftware.com" class="inline-flex items-center gap-x-2 text-base font-medium">
+            <svg
+              class="-ml-0.5 size-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path>
+            </svg>
+            info@flinksoftware.com
+          </a>
+        </div>
+      </div>
+      <div class="col-span-6 md:order-first md:col-span-3 md:col-start-1 lg:col-start-2">
+        <img
+          class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
+          src="/img/tonny-garic.webp"
+          alt="Tonny Garić" />
+        <div class="mt-3 ml-3">
+          <p class="text-base leading-[1.4] 2xl:text-xl">
+            <span class="font-medium">Tonny Garić</span>
+            <br />
+            Co-Founder
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

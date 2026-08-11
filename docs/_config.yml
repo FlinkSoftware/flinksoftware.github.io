@@ -1,5 +1,5 @@
 baseurl: ""
-url: "https://flinksoftware"
+url: "https://flinksoftware.com"
 
 defaults:
   -
@@ -7,3 +7,6 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+include:
+  - .well-known
