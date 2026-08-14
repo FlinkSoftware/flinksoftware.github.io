@@ -91,27 +91,27 @@
     }
     23% {
         content: "s#%^*";
-        color: var(--color-amber-600);
+        color: var(--color-green-700);
     }
     24% {
         content: "se!@#$";
-        color: var(--color-amber-600);
+        color: var(--color-green-700);
     }
     25% {
         content: "sec%^*";
-        color: var(--color-amber-600);
+        color: var(--color-green-700);
     }
     26% {
         content: "secu!@";
-        color: var(--color-amber-600);
+        color: var(--color-green-700);
     }
     27% {
         content: "secur#";
-        color: var(--color-amber-600);
+        color: var(--color-green-700);
     }
     28%, 55% {
         content: "secure";
-        color: var(--color-amber-600);
+        color: var(--color-green-700);
     }
     56% {
         content: "1##0$@^";
