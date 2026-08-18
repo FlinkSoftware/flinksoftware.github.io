@@ -22,7 +22,6 @@
 }
 
 @theme {
-    --font-sans: "Helvetica Neue", Helvetica, sans-serif;
     --font-display: Poppins, sans-serif;
     --color-primary: #0066bb;
     --color-secondary: #0082ee;
