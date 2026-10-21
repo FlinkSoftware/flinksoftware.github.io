@@ -1,6 +1,7 @@
 baseurl: ""
 url: "https://flinksoftware.com"
 description: "Flink Software vertaalt complexe IT-uitdagingen naar robuuste architectuur en software."
+google_analytics_id: G-JJHWMCQYCE
 
 plugins:
   - jekyll-sitemap

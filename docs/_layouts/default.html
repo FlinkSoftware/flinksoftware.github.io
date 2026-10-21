@@ -24,6 +24,35 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Flink Software" />
     <meta name="twitter:card" content="summary_large_image" />
+    {% if site.google_analytics_id and jekyll.environment == "production" %}
+    <!-- Google Tag only after the visitor's first scroll, tap or key, or after three seconds: it is the heaviest
+         thing on the page and nothing of it is needed for what the visitor sees. The queue below keeps the
+         page view and the config until it loads. Only in production builds (GitHub Pages), so local visits
+         stay out of the statistics. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "{{ site.google_analytics_id }}");
+      (function () {
+        var loaded = false;
+        function load() {
+          if (loaded) return;
+          loaded = true;
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = "https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}";
+          document.head.appendChild(script);
+        }
+        ["scroll", "pointerdown", "keydown", "touchstart"].forEach(function (type) {
+          window.addEventListener(type, load, { once: true, passive: true });
+        });
+        setTimeout(load, 3000);
+      })();
+    </script>
+    {% endif %}
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -108,7 +137,7 @@
         </div>
       </div>
       <nav
-        class="mx-auto mt-6 grid max-w-480 grid-cols-12 gap-x-5 gap-y-10 px-3 md:gap-y-0 md:px-5 lg:px-5 xl:mt-7 xl:px-10 2xl:mt-10 2xl:px-22"
+        class="mx-auto mt-6 grid max-w-480 grid-cols-12 gap-x-5 gap-y-10 px-3 xl:gap-y-0 md:px-5 lg:px-5 xl:mt-7 xl:px-10 2xl:mt-10 2xl:px-22"
         aria-label="Footer">
         <div class="col-span-6 md:col-span-3 xl:col-span-2">
           <h2 class="mb-2.5 text-xl font-medium md:mb-5 xl:text-2xl 2xl:text-3xl">Corporate</h2>
