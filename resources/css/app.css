@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
-@source "../../public";
-@source "../../public/_layouts";
-@source "../../public/_includes";
-@source not "../../public/_site";
+@source "../../docs";
+@source not "../../docs/_site";
 
 @font-face {
     font-family: Poppins;
@@ -191,7 +189,8 @@
         transform: translateX(0%);
     }
     to {
-        transform: translateX(-50%);
+        /* The track holds 3 identical copies; shifting exactly one copy loops seamlessly */
+        transform: translateX(-33.3333%);
     }
 }
 
@@ -224,7 +223,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .animate-reveal {
+    .animate-reveal,
+    .animate-progressive-scramble::after {
         animation: none !important;
+    }
+
+    .animate-progressive-scramble::after {
+        content: "innovate";
+        color: var(--color-primary);
     }
 }

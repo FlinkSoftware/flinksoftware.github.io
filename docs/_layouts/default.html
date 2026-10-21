@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }}</title>
-    <meta name="description" content="Wij vertalen complexe IT-uitdagingen naar robuuste architectuur en software." />
+    <meta name="description" content="{{ page.description | default: site.description }}" />
+    {% if page.robots %}<meta name="robots" content="{{ page.robots }}" />{% endif %}
     <link rel="canonical" href="https://flinksoftware.com{{ page.url }}" />
     <link rel="stylesheet" href="/css/app.css?v={{ site.time | date: '%s' }}" />
     <link rel="preload" href="/fonts/poppins-v23-latin-600.woff2" as="font" type="font/woff2" crossorigin />
@@ -16,14 +17,64 @@
     <meta property="og:site_name" content="Flink Software" />
     <meta property="og:url" content="https://flinksoftware.com{{ page.url }}" />
     <meta property="og:title" content="{{ page.title }}" />
-    <meta
-      property="og:description"
-      content="Flink Software vertaalt complexe IT-uitdagingen naar robuuste architectuur en software." />
-    <meta property="og:image" content="https://flinksoftware.com/img/og-image.webp" />
+    <meta property="og:description" content="{{ page.description | default: site.description }}" />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:image" content="https://flinksoftware.com/img/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Flink Software" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://flinksoftware.com/#organization",
+            "name": "Flink Software B.V.",
+            "alternateName": "Flink Software",
+            "url": "https://flinksoftware.com/",
+            "logo": "https://flinksoftware.com/img/flink-software.svg",
+            "image": "https://flinksoftware.com/img/og-image.jpg",
+            "description": "{{ site.description }}",
+            "email": "info@flinksoftware.com",
+            "telephone": "+31246757990",
+            "vatID": "NL866609209B01",
+            "duns": "965542492",
+            "identifier": { "@type": "PropertyValue", "propertyID": "KVK", "value": "94025711" },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Hollandiaweg 3",
+              "postalCode": "6541 BL",
+              "addressLocality": "Nijmegen",
+              "addressCountry": "NL"
+            },
+            "founder": [
+              { "@type": "Person", "name": "Adis Ćorović" },
+              { "@type": "Person", "name": "Tonny Garić" }
+            ],
+            "sameAs": ["https://www.linkedin.com/company/flinksoftware/"]
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "OfferDesk",
+            "url": "https://offerdesk.nl",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "nl",
+            "creator": { "@id": "https://flinksoftware.com/#organization" },
+            "publisher": { "@id": "https://flinksoftware.com/#organization" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
+    <a
+      href="#main"
+      class="sr-only rounded-full bg-neutral-900 px-5 py-2.5 text-base font-medium text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] hover:text-white">
+      Naar hoofdinhoud
+    </a>
     <header class="absolute inset-x-0 top-0 z-50 py-5 md:pt-7 xl:pt-9 2xl:pt-10">
       <nav
         class="mx-auto flex max-w-480 justify-between px-3 md:px-5 lg:px-5 xl:px-10 2xl:px-22"
@@ -60,14 +111,14 @@
         class="mx-auto mt-6 grid max-w-480 grid-cols-12 gap-x-5 gap-y-10 px-3 md:gap-y-0 md:px-5 lg:px-5 xl:mt-7 xl:px-10 2xl:mt-10 2xl:px-22"
         aria-label="Footer">
         <div class="col-span-6 md:col-span-3 xl:col-span-2">
-          <p class="mb-2.5 text-xl font-medium md:mb-5 xl:text-2xl 2xl:text-3xl">Corporate</p>
+          <h2 class="mb-2.5 text-xl font-medium md:mb-5 xl:text-2xl 2xl:text-3xl">Corporate</h2>
           <p class="text-sm leading-[1.6] md:text-base 2xl:text-xl">Flink Software B.V.</p>
           <p class="text-sm leading-[1.6] md:text-base 2xl:text-xl">KVK: 94025711</p>
           <p class="text-sm leading-[1.6] md:text-base 2xl:text-xl">Btw-id: NL866609209B01</p>
           <p class="text-sm leading-[1.6] md:text-base 2xl:text-xl">DUNS: 965542492</p>
         </div>
         <div class="col-span-6 md:col-span-3 xl:col-span-2">
-          <p class="mb-2.5 text-xl font-medium md:mb-5 xl:text-2xl 2xl:text-3xl">Legal</p>
+          <h2 class="mb-2.5 text-xl font-medium md:mb-5 xl:text-2xl 2xl:text-3xl">Legal</h2>
           <ul>
             <li>
               <a href="/algemene-voorwaarden" class="text-sm leading-[1.6] md:text-base 2xl:text-xl">
@@ -82,14 +133,22 @@
           </ul>
         </div>
         <div class="col-span-6 md:col-span-3 xl:col-span-2">
-          <p class="mb-2.5 text-xl font-medium md:mb-5 xl:text-2xl 2xl:text-3xl">Office</p>
+          <h2 class="mb-2.5 text-xl font-medium md:mb-5 xl:text-2xl 2xl:text-3xl">Products</h2>
+          <ul>
+            <li>
+              <a href="https://offerdesk.nl" class="text-sm leading-[1.6] md:text-base 2xl:text-xl"> OfferDesk </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-6 md:col-span-3 xl:col-span-2">
+          <h2 class="mb-2.5 text-xl font-medium md:mb-5 xl:text-2xl 2xl:text-3xl">Office</h2>
           <address class="text-sm leading-[1.6] not-italic md:text-base 2xl:text-xl">
             <p>Hollandiaweg 3</p>
             <p>6541 BL Nijmegen</p>
           </address>
         </div>
         <div class="col-span-6 md:col-span-3 xl:col-span-2">
-          <p class="mb-2.5 text-xl font-medium md:mb-5 xl:text-2xl 2xl:text-3xl">Contact</p>
+          <h2 class="mb-2.5 text-xl font-medium md:mb-5 xl:text-2xl 2xl:text-3xl">Contact</h2>
           <ul>
             <li>
               <a href="mailto:info@flinksoftware.com" class="text-sm leading-[1.6] md:text-base 2xl:text-xl">

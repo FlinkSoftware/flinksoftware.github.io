@@ -1,5 +1,9 @@
 baseurl: ""
 url: "https://flinksoftware.com"
+description: "Flink Software vertaalt complexe IT-uitdagingen naar robuuste architectuur en software."
+
+plugins:
+  - jekyll-sitemap
 
 defaults:
   -
@@ -7,6 +11,16 @@ defaults:
       path: ""
     values:
       layout: "default"
+  -
+    scope:
+      path: "docs"
+    values:
+      sitemap: false
 
 include:
   - .well-known
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
