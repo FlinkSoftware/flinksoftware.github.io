@@ -1,4 +1,10 @@
 {
+  "private": true,
+  "scripts": {
+    "dev": "tailwindcss -i ./resources/css/app.css -o ./docs/css/app.css --watch --minify",
+    "build": "tailwindcss -i ./resources/css/app.css -o ./docs/css/app.css --minify",
+    "format": "prettier --write \"docs/**/*.html\""
+  },
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
     "prettier": "^3.5.3",
