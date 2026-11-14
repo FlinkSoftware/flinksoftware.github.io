@@ -332,7 +332,7 @@ description: Flink Software uit Nijmegen ontwerpt, bouwt en optimaliseert bedrij
       </p>
     </div>
     <div class="col-span-12 md:col-span-10 md:col-start-2 xl:col-span-8 xl:col-start-3">
-      <article class="grid items-center gap-8 rounded-[20px] bg-slate-100 p-7 md:grid-cols-2 md:p-10 2xl:gap-14 2xl:p-14">
+      <article class="grid items-center gap-8 rounded-[20px] bg-slate-100 p-7 lg:grid-cols-2 md:p-10 2xl:gap-14 2xl:p-14">
         <div>
           <h3 class="mb-3 font-display text-3xl font-semibold tracking-tight md:text-4xl 2xl:text-5xl">OfferDesk</h3>
           <p class="mb-6 text-sm leading-[1.6] md:text-base 2xl:text-xl">
@@ -403,70 +403,124 @@ description: Flink Software uit Nijmegen ontwerpt, bouwt en optimaliseert bedrij
         </div>
         <figure
           role="img"
-          aria-label="Voorbeeld van een offerte in OfferDesk: per offerteregel staat de marge, en onderaan de verwachte winst van € 777 (37%)."
-          class="relative mx-auto mt-3 w-full max-w-md animate-reveal rounded-2xl bg-white p-5 pt-7 text-xs shadow-[0_24px_48px_-12px_rgb(15_23_42/0.25),0_8px_16px_-8px_rgb(15_23_42/0.15)] ring-1 ring-slate-200 md:mt-0 md:text-sm 2xl:max-w-lg 2xl:p-7 2xl:pt-9 2xl:text-base">
+          aria-label="Voorbeeld van een offerte in OfferDesk. Per regel staan de leverancier, de inkoopprijs en wat de regel oplevert. Daaronder het resultaat: subtotaal € 2.235,90 excl. btw, inkoop € 1.457,00 en een marge van € 778,90 (34,8%), met een balk die laat zien hoe het bedrag dat de klant betaalt is verdeeld over inkoop, marge en btw."
+          class="relative mx-auto mt-3 w-full max-w-md animate-reveal rounded-2xl bg-white text-xs shadow-[0_24px_48px_-12px_rgb(15_23_42/0.25),0_8px_16px_-8px_rgb(15_23_42/0.15)] ring-1 ring-slate-200 md:text-sm lg:mt-0 2xl:max-w-lg 2xl:text-base">
           <span
             class="absolute -top-3 left-5 rounded-full bg-primary px-3 py-1 font-mono text-[11px] tracking-wide text-white uppercase shadow-sm 2xl:left-7 2xl:text-xs">
             Voorbeeldofferte
           </span>
-          <div class="mb-4 flex items-start justify-between gap-4 border-b border-slate-100 pb-4">
+          <div class="flex items-start justify-between gap-4 px-4 sm:px-5 2xl:px-7 pt-7 pb-3 2xl:pt-9">
             <div>
-              <p class="font-medium">Badkamerrenovatie</p>
-              <p class="text-neutral-600">Offerte 2026-014</p>
+              <p class="text-neutral-600">Offerte 2026-0047 · Fam. Visser</p>
+              <p class="mt-0.5 text-sm font-medium md:text-base 2xl:text-lg">Badkamer vernieuwen</p>
             </div>
-            <span class="rounded-full bg-blue-50 px-2.5 py-1 font-medium text-blue-700">Concept</span>
+            <span
+              class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 font-medium text-blue-700">
+              <span class="size-1.5 rounded-full bg-primary"></span>Open
+            </span>
           </div>
-          <table class="w-full tabular-nums">
-            <thead class="text-left text-neutral-600">
-              <tr>
-                <th class="pb-2 font-normal">Regel</th>
-                <th class="pb-2 text-right font-normal">Verkoop</th>
-                <th class="pb-2 text-right font-normal">Marge</th>
-              </tr>
-            </thead>
-            <tbody class="[&_td]:py-1.5">
-              <tr>
-                <td>Wandtegels 30×60</td>
-                <td class="text-right">€ 540</td>
-                <td class="text-right">
-                  <span class="rounded-md bg-green-50 px-1.5 py-0.5 font-medium text-green-700">32%</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Inbouwkraan</td>
-                <td class="text-right">€ 385</td>
-                <td class="text-right">
-                  <span class="rounded-md bg-green-50 px-1.5 py-0.5 font-medium text-green-700">28%</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Arbeid, 16 uur</td>
-                <td class="text-right">€ 1.040</td>
-                <td class="text-right">
-                  <span class="rounded-md bg-green-50 px-1.5 py-0.5 font-medium text-green-700">45%</span>
-                </td>
-              </tr>
-              <tr>
-                <td>Afvoer &amp; kitwerk</td>
-                <td class="text-right">€ 160</td>
-                <td class="text-right">
-                  <span class="rounded-md bg-amber-50 px-1.5 py-0.5 font-medium text-amber-800">18%</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="mt-4 border-t border-slate-100 pt-4">
-            <div class="mb-1 flex justify-between text-neutral-600">
-              <span>Totaal excl. btw</span>
-              <span class="tabular-nums">€ 2.125</span>
+          <ul class="divide-y divide-slate-100 border-t border-slate-100">
+            <li class="flex items-start justify-between gap-3 px-4 sm:px-5 2xl:px-7 py-2.5 sm:gap-4">
+              <div class="min-w-0">
+                <p class="font-medium">Grohe inbouwthermostaat set</p>
+                <p
+                  class="mt-1 inline-flex max-w-full items-center gap-1.5 rounded-md border border-slate-200 px-1.5 py-0.5 text-[11px] text-neutral-600 md:text-xs 2xl:text-sm">
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-3.5 shrink-0"
+                  aria-hidden="true"
+                  focusable="false">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                </svg>
+                  <span class="truncate">Technische Unie · inkoop € 612,00</span>
+                </p>
+              </div>
+              <div class="shrink-0 text-right whitespace-nowrap tabular-nums">
+                <p class="font-medium">€ 765,00</p>
+                <p class="mt-1 text-[11px] font-medium text-green-700 md:text-xs 2xl:text-sm">+ € 153,00</p>
+              </div>
+            </li>
+            <li class="flex items-start justify-between gap-3 px-4 sm:px-5 2xl:px-7 py-2.5 sm:gap-4">
+              <div class="min-w-0">
+                <p class="font-medium">Villeroy &amp; Boch toilet en wastafel</p>
+                <p
+                  class="mt-1 inline-flex max-w-full items-center gap-1.5 rounded-md border border-slate-200 px-1.5 py-0.5 text-[11px] text-neutral-600 md:text-xs 2xl:text-sm">
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-3.5 shrink-0"
+                  aria-hidden="true"
+                  focusable="false">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                </svg>
+                  <span class="truncate">Wasco · inkoop € 845,00</span>
+                </p>
+              </div>
+              <div class="shrink-0 text-right whitespace-nowrap tabular-nums">
+                <p class="font-medium">€ 1.030,90</p>
+                <p class="mt-1 text-[11px] font-medium text-green-700 md:text-xs 2xl:text-sm">+ € 185,90</p>
+              </div>
+            </li>
+            <li class="flex items-start justify-between gap-3 px-4 sm:px-5 2xl:px-7 py-2.5 sm:gap-4">
+              <div class="min-w-0">
+                <p class="font-medium">Installeren · 8 uur</p>
+                <p class="mt-1 text-[11px] text-neutral-600 md:text-xs 2xl:text-sm">Eigen uren</p>
+              </div>
+              <p class="shrink-0 text-right font-medium whitespace-nowrap tabular-nums">€ 440,00</p>
+            </li>
+          </ul>
+          <div class="rounded-b-2xl border-t border-slate-200 bg-slate-50 px-4 sm:px-5 2xl:px-7 pt-4 pb-5 2xl:pb-7">
+            <div class="mb-2 flex items-center justify-between gap-4">
+              <p class="text-sm font-semibold md:text-base 2xl:text-lg">Resultaat</p>
+              <span class="rounded-full bg-slate-200/70 px-2.5 py-0.5 text-[11px] font-medium whitespace-nowrap text-neutral-600 md:text-xs">
+                Excl. btw
+              </span>
             </div>
-            <div class="mb-3 flex items-baseline justify-between">
-              <span class="font-medium">Verwachte winst</span>
-              <span class="text-base font-semibold text-green-700 tabular-nums md:text-lg 2xl:text-xl">€ 777 · 37%</span>
+            <div class="[&>div]:flex [&>div]:items-baseline [&>div]:justify-between [&>div]:gap-4 [&>div]:py-1 [&>div]:pl-4">
+              <div class="text-neutral-600">
+                <span>Subtotaal excl. btw</span>
+                <span class="whitespace-nowrap text-neutral-900 tabular-nums">€ 2.235,90</span>
+              </div>
+              <div class="relative text-neutral-600">
+                <span><span class="absolute left-0" aria-hidden="true">−</span>Inkoop</span>
+                <span class="whitespace-nowrap text-neutral-900 tabular-nums">€ 1.457,00</span>
+              </div>
+              <div class="mt-1.5 items-center! border-t border-slate-200 pt-2.5!">
+                <span class="font-semibold">Marge</span>
+                <span class="flex items-center gap-2">
+                  <span
+                    class="rounded-full bg-green-100 px-2 py-0.5 text-[11px] font-medium whitespace-nowrap text-green-700 md:text-xs 2xl:text-sm">
+                    34,8%
+                  </span>
+                  <span class="text-lg font-bold whitespace-nowrap text-green-700 tabular-nums md:text-xl 2xl:text-2xl">
+                    € 778,90
+                  </span>
+                </span>
+              </div>
             </div>
-            <div class="h-2 overflow-hidden rounded-full bg-slate-100">
-              <div class="h-full w-[37%] rounded-full bg-green-600"></div>
+            <div class="mt-3 flex h-2 gap-0.5 overflow-hidden rounded-full">
+              <div class="w-[54%] bg-slate-300"></div>
+              <div class="w-[29%] bg-green-600"></div>
+              <div class="flex-1 bg-blue-300"></div>
             </div>
+            <ul class="mt-2.5 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-neutral-600 md:text-xs 2xl:text-sm">
+              <li class="flex items-center gap-1.5"><span class="size-2 rounded-full bg-slate-300"></span>Inkoop 54%</li>
+              <li class="flex items-center gap-1.5"><span class="size-2 rounded-full bg-green-600"></span>Marge 29%</li>
+              <li class="flex items-center gap-1.5"><span class="size-2 rounded-full bg-blue-300"></span>Btw 17%</li>
+            </ul>
           </div>
         </figure>
       </article>
