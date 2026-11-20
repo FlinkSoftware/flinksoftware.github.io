@@ -83,83 +83,95 @@
 
 @keyframes progressiveScramble {
     0%, 22% {
-        content: "scale";
+        content: "bouwen";
         color: var(--color-zinc-600);
     }
     23% {
-        content: "s#%^*";
+        content: "b#%^*@";
         color: var(--color-green-700);
     }
     24% {
-        content: "se!@#$";
+        content: "be!@#$%";
         color: var(--color-green-700);
     }
     25% {
-        content: "sec%^*";
+        content: "bev%^*#";
         color: var(--color-green-700);
     }
     26% {
-        content: "secu!@";
+        content: "beve!@#$";
         color: var(--color-green-700);
     }
     27% {
-        content: "secur#";
+        content: "bevei#%^";
         color: var(--color-green-700);
     }
-    28%, 55% {
-        content: "secure";
+    28% {
+        content: "beveil@#";
+        color: var(--color-green-700);
+    }
+    29% {
+        content: "beveili!$";
+        color: var(--color-green-700);
+    }
+    30% {
+        content: "beveilig#";
+        color: var(--color-green-700);
+    }
+    31%, 55% {
+        content: "beveiligen";
         color: var(--color-green-700);
     }
     56% {
-        content: "1##0$@^";
+        content: "s##0$@^";
         color: var(--color-blue-600);
     }
     57% {
-        content: "i%@%@/";
+        content: "sc%@%@/";
         color: var(--color-blue-600);
     }
     58% {
-        content: "inn//<";
+        content: "sch//<";
         color: var(--color-blue-600);
     }
     59% {
-        content: "inno!@";
+        content: "scha!@";
         color: var(--color-blue-600);
     }
     60% {
-        content: "innov%^";
+        content: "schal%";
         color: var(--color-blue-600);
     }
     61% {
-        content: "innova!";
+        content: "schale#";
         color: var(--color-blue-600);
     }
-    62% {
-        content: "innovat#";
-        color: var(--color-blue-600);
-    }
-    63%, 88% {
-        content: "innovate";
+    62%, 88% {
+        content: "schalen";
         color: var(--color-blue-600);
     }
     89% {
-        content: "s!@#$%";
+        content: "b!@#$%";
         color: var(--color-zinc-600);
     }
     90% {
-        content: "sc#$%";
+        content: "bo#$%";
         color: var(--color-zinc-600);
     }
     91% {
-        content: "sca!@";
+        content: "bou!@";
         color: var(--color-zinc-600);
     }
     92% {
-        content: "scal#";
+        content: "bouw#";
+        color: var(--color-zinc-600);
+    }
+    93% {
+        content: "bouwe$";
         color: var(--color-zinc-600);
     }
     100% {
-        content: "scale";
+        content: "bouwen";
         color: var(--color-zinc-600);
     }
 }
@@ -216,7 +228,7 @@
 
 @layer utilities {
     .animate-progressive-scramble::after {
-        content: "scale";
+        content: "bouwen";
         animation: var(--animate-scramble);
         display: inline-block;
         min-width: 8ch;
@@ -234,7 +246,7 @@
     }
 
     .animate-progressive-scramble::after {
-        content: "innovate";
+        content: "bouwen";
         color: var(--color-primary);
     }
 }
