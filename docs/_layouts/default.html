@@ -100,7 +100,7 @@
       }
     </script>
   </head>
-  <body>
+  <body{% if page.contact_topic %} data-contact-topic="{{ page.contact_topic }}"{% endif %}>
     <a
       href="#main"
       class="sr-only rounded-full bg-neutral-900 px-5 py-2.5 text-base font-medium text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] hover:text-white">
@@ -108,9 +108,9 @@
     </a>
     <header class="absolute inset-x-0 top-0 z-50 py-5 md:pt-7 xl:pt-9 2xl:pt-10">
       <nav
-        class="mx-auto flex max-w-480 justify-between px-3 md:px-5 lg:px-5 xl:px-10 2xl:px-22"
+        class="mx-auto flex max-w-480 items-center justify-between gap-3 px-3 md:px-5 lg:px-5 xl:px-10 2xl:px-22"
         aria-label="Hoofdnavigatie">
-        <a href="/" class="h-6 w-auto xl:h-9 2xl:h-11.5">
+        <a href="/" class="h-6 w-auto shrink-0 max-[359px]:h-5 xl:h-9 2xl:h-11.5">
           <img
             src="/img/flink-software.svg"
             alt="Flink Software"
@@ -120,7 +120,69 @@
             height="24"
             class="h-full w-auto max-w-none" />
         </a>
-        <a href="/contact" class="text-base font-medium xl:text-xl"> Contact </a>
+        <div class="flex items-center gap-3 sm:gap-6 xl:gap-8">
+          <!-- Without JavaScript this still opens and closes; the script at the end of the body only adds
+               closing on Escape and on a click outside the menu. -->
+          <details class="group sm:relative" data-nav-menu>
+            <summary
+              class="ai-button flex cursor-pointer list-none items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm font-medium text-white outline-offset-2 outline-primary select-none focus-visible:outline-2 xl:px-5 xl:py-2 xl:text-lg [&::-webkit-details-marker]:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-4 xl:size-5"
+                aria-hidden="true"
+                focusable="false">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+              </svg>
+              <span>AI<span class="max-sm:sr-only">-diensten</span></span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="size-3.5 transition-transform duration-300 group-open:rotate-180 max-[359px]:hidden xl:size-4"
+                aria-hidden="true"
+                focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </summary>
+            <ul
+              class="absolute inset-x-3 top-full z-50 -mt-2 grid gap-1 rounded-2xl bg-white p-2 shadow-[0_24px_48px_-12px_rgb(15_23_42/0.25),0_8px_16px_-8px_rgb(15_23_42/0.15)] ring-1 ring-slate-200 sm:inset-x-auto sm:right-0 sm:mt-3 sm:w-96">
+              <li>
+                <a
+                  href="/security-audit-met-ai"
+                  data-track="menu_click"
+                  class="block rounded-xl p-4 hover:bg-slate-100 aria-[current=page]:bg-slate-100"
+                  {% if page.url == "/security-audit-met-ai" %}aria-current="page"{% endif %}>
+                  <span class="block text-base font-medium xl:text-lg">Security audit</span>
+                  <span class="mt-0.5 block text-sm leading-[1.5] text-neutral-600">
+                    Vind kwetsbaarheden in je code voordat een aanvaller het doet.
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/applicatie-moderniseren-met-ai"
+                  data-track="menu_click"
+                  class="block rounded-xl p-4 hover:bg-slate-100 aria-[current=page]:bg-slate-100"
+                  {% if page.url == "/applicatie-moderniseren-met-ai" %}aria-current="page"{% endif %}>
+                  <span class="block text-base font-medium xl:text-lg">Applicatie moderniseren</span>
+                  <span class="mt-0.5 block text-sm leading-[1.5] text-neutral-600">
+                    Je legacy-applicatie naar een moderne stack, stap voor stap.
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </details>
+          <a href="/contact" class="text-base font-medium xl:text-xl"> Contact </a>
+        </div>
       </nav>
     </header>
     {{ content }}
@@ -212,5 +274,60 @@
         </div>
       </div>
     </footer>
+    <script>
+      (function () {
+        var menu = document.querySelector("[data-nav-menu]");
+        if (!menu) return;
+        document.addEventListener("click", function (event) {
+          if (menu.open && !menu.contains(event.target)) menu.open = false;
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && menu.open) {
+            menu.open = false;
+            menu.querySelector("summary").focus();
+          }
+        });
+      })();
+    </script>
+    <script>
+      // Click measurement for Google Analytics. Sends nothing when Analytics is not loaded (local builds).
+      //   cta_click, secondary_click, menu_click: links marked with data-track
+      //   contact_click: every phone and e-mail link, with the method and, on the contact page, the topic
+      (function () {
+        var topic = document.body.dataset.contactTopic;
+        {% if page.url == "/contact" %}
+        var topics = {{ site.data.contact_topics | jsonify }};
+        var asked = new URLSearchParams(window.location.search).get("onderwerp");
+        if (Object.prototype.hasOwnProperty.call(topics, asked)) topic = asked;
+        {% endif %}
+        function measure(event) {
+          // A middle click opens the link in a new tab and counts; a right click only opens the menu.
+          if (event.type === "auxclick" && event.button !== 1) return;
+          var link = event.target.closest ? event.target.closest("a") : null;
+          if (!link || typeof gtag !== "function") return;
+          var href = link.getAttribute("href") || "";
+          var area = link.closest("section[id], header, footer");
+          var where = area ? area.id || area.tagName.toLowerCase() : link.closest("section") ? "hero" : "page";
+          if (href.indexOf("tel:") === 0 || href.indexOf("mailto:") === 0) {
+            gtag("event", "contact_click", {
+              method: href.indexOf("tel:") === 0 ? "phone" : "email",
+              click_location: where,
+              contact_topic: topic,
+            });
+          } else if (link.dataset.track) {
+            var details = {
+              click_text: link.textContent.replace(/\s+/g, " ").trim(),
+              click_location: where,
+              link_url: href,
+            };
+            // Buttons that share their text, such as those of the packages, say which one was clicked.
+            if (link.dataset.trackItem) details.click_item = link.dataset.trackItem;
+            gtag("event", link.dataset.track, details);
+          }
+        }
+        document.addEventListener("click", measure);
+        document.addEventListener("auxclick", measure);
+      })();
+    </script>
   </body>
 </html>

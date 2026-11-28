@@ -165,19 +165,7 @@ faq:
       </h2>
     </div>
     <div class="col-span-12 mt-5 md:col-span-10 md:col-start-2 md:mt-8 xl:col-span-6 xl:col-start-3">
-      <ol class="space-y-8">
-        {% for item in page.steps %}
-        <li class="relative pl-14">
-          <span
-            class="absolute top-0 left-0 flex size-9 items-center justify-center rounded-full bg-primary font-display text-base font-semibold text-white"
-            aria-hidden="true"
-            >{{ forloop.index }}</span
-          >
-          <h3 class="mb-1.5 text-xl font-medium xl:text-2xl">{{ item.title }}</h3>
-          <p class="text-base leading-[1.6] text-neutral-800 2xl:text-xl">{{ item.text }}</p>
-        </li>
-        {% endfor %}
-      </ol>
+      {% include step-list.html items=page.steps %}
       <div class="mt-10">{% include cta.html label=page.cta_label %}</div>
     </div>
   </section>
@@ -199,15 +187,7 @@ faq:
           {% endfor %}
         </ul>
         <p class="mt-14 mb-8 text-sm text-neutral-600 md:text-base">We werkten onder meer voor:</p>
-        <ul
-          class="flex flex-wrap items-center gap-x-12 gap-y-8 [&_img]:w-auto [&_img]:max-w-40 [&_img]:object-contain [&_img]:opacity-50 [&_img]:grayscale">
-          <li><img src="/img/ing.svg" alt="ING" loading="lazy" decoding="async" width="118" height="30" class="max-h-7.5" /></li>
-          <li><img src="/img/kb.svg" alt="Koninklijke Bibliotheek" loading="lazy" decoding="async" width="104" height="30" class="max-h-7.5" /></li>
-          <li><img src="/img/alliander.webp" alt="Alliander" loading="lazy" decoding="async" width="78" height="30" class="max-h-7.5" /></li>
-          <li><img src="/img/kadaster.svg" alt="Kadaster" loading="lazy" decoding="async" width="52" height="40" class="max-h-10" /></li>
-          <li><img src="/img/bmg.svg" alt="Bank Mendes Gans" loading="lazy" decoding="async" width="160" height="16" class="h-4! w-40!" /></li>
-          <li><img src="/img/planon.svg" alt="Planon" loading="lazy" decoding="async" width="113" height="30" class="max-h-7.5" /></li>
-        </ul>
+        {% include client-logos.html %}
       </div>
     </div>
   </section>
@@ -217,28 +197,7 @@ faq:
       <h2 id="faq-heading" class="section-heading">Veelgestelde <span class="text-color-fade">vragen</span></h2>
     </div>
     <div class="col-span-12 mt-5 md:col-span-10 md:col-start-2 md:mt-8 xl:col-span-6 xl:col-start-3">
-      <div class="border-b border-neutral-900">
-        {% for item in page.faq %}
-        <details class="group border-t border-neutral-900">
-          <summary
-            class="flex cursor-pointer list-none items-center justify-between gap-5 py-5 text-xl font-medium hover:text-primary xl:text-2xl [&::-webkit-details-marker]:hidden">
-            <h3>{{ item.q }}</h3>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6 shrink-0 transition-transform duration-300 group-open:rotate-45"
-              aria-hidden="true"
-              focusable="false">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-            </svg>
-          </summary>
-          <p class="pr-10 pb-6 text-base leading-[1.6] text-neutral-800 2xl:text-xl">{{ item.a }}</p>
-        </details>
-        {% endfor %}
-      </div>
+      {% include faq-list.html items=page.faq %}
     </div>
   </section>
 
@@ -254,10 +213,12 @@ faq:
         er voorlopig niets aan te doen. We zitten aan de Hollandiaweg in Nijmegen en komen graag bij je langs, in de
         regio en daarbuiten.
       </p>
-      {% include cta.html label=page.cta_label %}
+      {% include cta.html label=page.cta_label phone=true %}
       <p class="mt-8 text-sm leading-[1.6] text-neutral-600 md:text-base">
         Op zoek naar nieuwe software in plaats van vernieuwing? Lees meer over
         <a href="/softwarebedrijf-nijmegen" class="underline underline-offset-4">maatwerk software en bedrijfsapplicaties</a>.
+        Benieuwd wat AI aan de afweging verandert? Lees over
+        <a href="/applicatie-moderniseren-met-ai" class="underline underline-offset-4">applicatie moderniseren met AI</a>.
       </p>
     </div>
   </section>

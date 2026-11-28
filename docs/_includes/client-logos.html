@@ -1,0 +1,9 @@
+{% comment %} Row of client logos in grey: the featured ones from _data/client_logos.yml. {% endcomment %}
+<ul
+  class="flex flex-wrap items-center gap-x-12 gap-y-8 [&_img]:w-auto [&_img]:max-w-40 [&_img]:object-contain [&_img]:opacity-50 [&_img]:grayscale">
+  {% for logo in site.data.client_logos %}
+  {% if logo.featured %}
+  <li><img src="{{ logo.src }}" alt="{{ logo.alt }}" loading="lazy" decoding="async" width="{{ logo.width }}" height="{{ logo.height }}" style="height: {{ logo.height }}px" /></li>
+  {% endif %}
+  {% endfor %}
+</ul>

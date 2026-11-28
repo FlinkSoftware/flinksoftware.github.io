@@ -1,0 +1,17 @@
+{% comment %}
+  Two-column list with an icon per item, the same list as "Capabilities" on the homepage.
+  Parameter: items, a list of entries with icon (a name from _data/icons.yml), title and text.
+{% endcomment %}
+<dl class="grid grid-cols-1 gap-x-8 gap-y-10 text-sm sm:grid-cols-2 md:text-base 2xl:text-xl">
+  {% for item in include.items %}
+  <div class="relative pl-9">
+    <dt class="inline font-medium">
+      {% if site.data.icons[item.icon] %}
+      {% include icon.html name=item.icon class="absolute top-0.5 left-0 size-5 text-neutral-500" %}
+      {% endif %}
+      {{ item.title }}.
+    </dt>
+    <dd class="inline text-neutral-800">{{ item.text }}</dd>
+  </div>
+  {% endfor %}
+</dl>

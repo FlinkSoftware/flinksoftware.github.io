@@ -1,0 +1,52 @@
+{% comment %}
+  Three package cards next to each other on wide screens, stacked below that. The button sits right under the
+  price, so the three buttons line up whatever the length of the lists.
+  Parameter: offers, a list from the page's front matter. Each entry has:
+    name, description (one line), price, price_note
+    price_prefix (optional): a small word before the price, for example "vanaf"
+    features: the list of what is in the package
+    cta: the text on the button
+    featured (optional): true for the card that stands out, with the filled button
+    badge (optional): a short label next to the name, for example "Aanbevolen"
+    audience (optional): the rest of the sentence "Kies dit als …" under the list, starting in lower case
+{% endcomment %}
+<div class="isolate grid grid-cols-1 gap-6 xl:grid-cols-3">
+  {% for offer in include.offers %}
+  <article
+    class="flex flex-col rounded-[20px] p-8 2xl:p-10 {% if offer.featured %}ai-outline{% else %}border-2 border-transparent bg-white inset-ring inset-ring-slate-300{% endif %}">
+    <div class="flex items-center justify-between gap-x-4">
+      <h3
+        id="tier-{{ forloop.index }}"
+        class="text-xl font-medium xl:text-2xl {% if offer.featured %}text-primary{% endif %}">
+        {{ offer.name }}
+      </h3>
+      {% if offer.badge %}
+      <p class="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary md:text-sm">{{ offer.badge }}</p>
+      {% endif %}
+    </div>
+    <p class="mt-3 text-base leading-[1.6] text-neutral-600 xl:min-h-[3.2em]">{{ offer.description }}</p>
+    <p class="mt-6 flex items-baseline gap-x-2">
+      {% if offer.price_prefix %}<span class="text-base text-neutral-600">{{ offer.price_prefix }}</span>{% endif %}
+      <span class="font-display text-5xl font-semibold tracking-tight xl:text-[44px] 2xl:text-6xl">{{ offer.price }}</span>
+    </p>
+    <p class="mt-2 text-sm text-neutral-600 md:text-base">{{ offer.price_note }}</p>
+    {% capture tier_id %}tier-{{ forloop.index }}{% endcapture %}
+    {% assign tier_outline = true %}
+    {% if offer.featured %}{% assign tier_outline = false %}{% endif %}
+    <div class="mt-6">{% include cta.html label=offer.cta outline=tier_outline full=true describedby=tier_id item=offer.name %}</div>
+    <ul class="mt-8 mb-auto grid gap-y-2.5 text-base leading-[1.6] text-neutral-800">
+      {% for feature in offer.features %}
+      <li class="relative pl-8">
+        {% include icon.html name="check" class="absolute top-0.5 left-0 size-5 text-primary" %}
+        {{ feature }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% if offer.audience %}
+    <p class="mt-8 border-t border-slate-300 pt-5 text-sm leading-[1.6] text-neutral-600 md:text-base">
+      <span class="font-medium text-neutral-900">Kies dit als</span> {{ offer.audience }}
+    </p>
+    {% endif %}
+  </article>
+  {% endfor %}
+</div>

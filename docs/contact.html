@@ -15,7 +15,7 @@ description: Neem contact op met Flink Software in Nijmegen. Bel 024 - 675 79 90
       Contact
     </h1>
     <p class="text-xl leading-[1.4] text-neutral-600 xl:text-2xl 2xl:text-[32px]">
-      Software waar veel van afhangt?
+      <span data-contact-lead>Software waar veel van afhangt?</span>
       <span class="text-neutral-900">Bel of mail gerust.</span>
     </p>
   </div>
@@ -58,3 +58,17 @@ description: Neem contact op met Flink Software in Nijmegen. Bel 024 - 675 79 90
     </div>
   </div>
 </main>
+
+<script>
+  // Visitors who arrive from a service page (/contact?onderwerp=...) get a matching line and e-mail subject.
+  (function () {
+    var topics = {{ site.data.contact_topics | jsonify }};
+    var key = new URLSearchParams(window.location.search).get("onderwerp");
+    if (!Object.prototype.hasOwnProperty.call(topics, key)) return;
+    var topic = topics[key];
+    document.querySelector("[data-contact-lead]").textContent = topic.lead;
+    document.querySelectorAll('#main a[href^="mailto:"]').forEach(function (link) {
+      link.href = link.getAttribute("href").split("?")[0] + "?subject=" + encodeURIComponent(topic.subject);
+    });
+  })();
+</script>

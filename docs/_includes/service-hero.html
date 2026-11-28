@@ -1,0 +1,22 @@
+{% comment %}
+  Opening section of an AI service page: a large two-line title that ends in "met AI.", a lead, the page's
+  call to action and one thing next to it: a text link to the "process" section or a small note.
+  Parameters: line1, line2 and lead. Optional: secondary_label (the text of the link to "process"), or
+  note_link with note_href (a short linked text, for example the price and the price section) and
+  note_text (plain text that follows it).
+{% endcomment %}
+<section class="relative z-30 mb-16 pt-28 pb-10 md:mb-24 md:pt-40 lg:mb-32 xl:pt-48" aria-label="Hero">
+  <div class="section-grid">
+    <div class="col-span-12 md:col-span-8 md:col-start-3">
+      <h1
+        class="font-display text-[44px] leading-[1.1] font-semibold tracking-tight text-zinc-900 sm:text-6xl md:text-5xl lg:text-7xl xl:text-8xl">
+        {{ include.line1 }}
+        <br />
+        {{ include.line2 }}
+        <span class="block text-primary md:text-right">met <span class="text-ai-gradient">AI.</span></span>
+      </h1>
+      <p class="mt-8 max-w-3xl section-lead text-neutral-600 md:mt-10 2xl:max-w-5xl">{{ include.lead }}</p>
+      <div class="mt-8 md:mt-10">{% include cta.html label=page.cta_label secondary_label=include.secondary_label secondary_href="#process" note_link=include.note_link note_href=include.note_href note_text=include.note_text %}</div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+{% comment %}
+  Wide outlined card for a tailored offer, shown under the package cards of price-tiers.html.
+  Parameter: offer, an entry from the page's front matter with name, price, price_note, cta (the text on the
+  button), included_title and included (a list).
+{% endcomment %}
+{% assign offer = include.offer %}
+<article class="grid gap-8 rounded-[20px] p-7 ring-1 ring-slate-300 md:p-10 lg:grid-cols-2 2xl:gap-14 2xl:p-14">
+  <div>
+    <h3 class="mb-3 text-xl font-medium xl:text-2xl">{{ offer.name }}</h3>
+    <p class="font-display text-5xl font-semibold tracking-tight md:text-6xl">{{ offer.price }}</p>
+    <p class="mt-2 text-sm text-neutral-600 md:text-base">{{ offer.price_note }}</p>
+    <div class="mt-8">{% include cta.html label=offer.cta outline=true %}</div>
+  </div>
+  {% include check-list.html title=offer.included_title items=offer.included two_cols=true level=4 %}
+</article>

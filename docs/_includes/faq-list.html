@@ -1,0 +1,24 @@
+{% comment %}
+  Collapsible questions and answers. Parameter: items, a list of entries with q and a. An entry may also carry
+  group: the name of a group that starts at that question, shown as a small heading above it.
+{% endcomment %}
+<div class="border-b border-neutral-900">
+  {% assign question_level = 3 %}
+  {% for item in include.items %}
+  {% if item.group %}
+  {% assign question_level = 4 %}
+  <h3
+    class="pb-3 font-mono text-xs tracking-wide text-neutral-600 md:text-sm {% unless forloop.first %}border-t border-neutral-900 pt-12{% endunless %}">
+    {{ item.group }}
+  </h3>
+  {% endif %}
+  <details class="group border-t border-neutral-900">
+    <summary
+      class="flex cursor-pointer list-none items-center justify-between gap-5 py-5 text-xl font-medium hover:text-primary xl:text-2xl [&::-webkit-details-marker]:hidden">
+      <h{{ question_level }}>{{ item.q }}</h{{ question_level }}>
+      {% include icon.html name="plus" class="size-6 shrink-0 transition-transform duration-300 group-open:rotate-45" %}
+    </summary>
+    <p class="pr-10 pb-6 text-base leading-[1.6] text-neutral-800 2xl:text-xl">{{ item.a }}</p>
+  </details>
+  {% endfor %}
+</div>

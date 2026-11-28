@@ -1,0 +1,19 @@
+{% comment %}
+  Photo beside the lead of a section, placed like the one in "Vision" on the homepage.
+  Parameters: src, alt, width and height, and optionally src_large: the same photo twice as wide, which
+  sharp and wide screens then load instead.
+{% endcomment %}
+<div class="section-aside animate-reveal">
+  <img
+    src="{{ include.src }}"
+    {% if include.src_large %}
+    srcset="{{ include.src }} {{ include.width }}w, {{ include.src_large }} {{ include.width | times: 2 }}w"
+    sizes="(min-width: 80rem) 40vw, (min-width: 48rem) 50vw, 100vw"
+    {% endif %}
+    alt="{{ include.alt }}"
+    loading="lazy"
+    decoding="async"
+    width="{{ include.width }}"
+    height="{{ include.height }}"
+    class="h-full w-full rounded-[20px] object-cover" />
+</div>

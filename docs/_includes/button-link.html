@@ -1,0 +1,17 @@
+{% comment %}
+  Secondary button: an outlined pill with an arrow, for a link to another page. The filled black button stays
+  reserved for the page's main call to action. Parameters: href, label and track (the name under which a
+  click is measured, "secondary_click" by default). Optional: full (true for the full width of its box),
+  describedby (the id of the element that says what the button belongs to) and item (a name sent along with
+  the measured click, for example the package). At full width the outline is drawn inside the button, so it is
+  exactly as high as a filled button next to it.
+{% endcomment %}
+<a
+  href="{{ include.href }}"
+  data-track="{{ include.track | default: 'secondary_click' }}"
+  {% if include.item %}data-track-item="{{ include.item }}"{% endif %}
+  {% if include.describedby %}aria-describedby="{{ include.describedby }}"{% endif %}
+  class="inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-medium hover:bg-neutral-900 hover:text-white {% if include.full %}w-full justify-center inset-ring inset-ring-neutral-900{% else %}border border-neutral-900{% endif %}">
+  {{ include.label }}
+  {% include icon.html name="arrow-right" class="-mr-0.5 size-5" %}
+</a>

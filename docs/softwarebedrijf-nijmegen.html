@@ -146,19 +146,7 @@ faq:
       </h2>
     </div>
     <div class="col-span-12 mt-5 md:col-span-10 md:col-start-2 md:mt-8 xl:col-span-6 xl:col-start-3">
-      <ol class="space-y-8">
-        {% for item in page.steps %}
-        <li class="relative pl-14">
-          <span
-            class="absolute top-0 left-0 flex size-9 items-center justify-center rounded-full bg-primary font-display text-base font-semibold text-white"
-            aria-hidden="true"
-            >{{ forloop.index }}</span
-          >
-          <h3 class="mb-1.5 text-xl font-medium xl:text-2xl">{{ item.title }}</h3>
-          <p class="text-base leading-[1.6] text-neutral-800 2xl:text-xl">{{ item.text }}</p>
-        </li>
-        {% endfor %}
-      </ol>
+      {% include step-list.html items=page.steps %}
       <div class="mt-10">{% include cta.html %}</div>
     </div>
   </section>
@@ -198,28 +186,7 @@ faq:
       <h2 id="faq-heading" class="section-heading">Veelgestelde <span class="text-color-fade">vragen</span></h2>
     </div>
     <div class="col-span-12 mt-5 md:col-span-10 md:col-start-2 md:mt-8 xl:col-span-6 xl:col-start-3">
-      <div class="border-b border-neutral-900">
-        {% for item in page.faq %}
-        <details class="group border-t border-neutral-900">
-          <summary
-            class="flex cursor-pointer list-none items-center justify-between gap-5 py-5 text-xl font-medium hover:text-primary xl:text-2xl [&::-webkit-details-marker]:hidden">
-            <h3>{{ item.q }}</h3>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6 shrink-0 transition-transform duration-300 group-open:rotate-45"
-              aria-hidden="true"
-              focusable="false">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-            </svg>
-          </summary>
-          <p class="pr-10 pb-6 text-base leading-[1.6] text-neutral-800 2xl:text-xl">{{ item.a }}</p>
-        </details>
-        {% endfor %}
-      </div>
+      {% include faq-list.html items=page.faq %}
     </div>
   </section>
 
@@ -233,7 +200,7 @@ faq:
       <p class="mb-8 section-lead">
         Vertel ons wat er nu handmatig, dubbel of in Excel gebeurt. Je hoort snel of we je kunnen helpen en hoe.
       </p>
-      {% include cta.html %}
+      {% include cta.html phone=true %}
       <address class="mt-8 text-sm leading-[1.6] text-neutral-600 not-italic md:text-base">
         Flink Software B.V. · Hollandiaweg 3, 6541 BL Nijmegen ·
         <a href="mailto:info@flinksoftware.com">info@flinksoftware.com</a>

@@ -1,0 +1,33 @@
+{% comment %}
+  Structured data for a service page: the service itself and, when the page has questions, its FAQ.
+  Parameters: name and service_type. The description and the questions come from the page's front matter.
+{% endcomment %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://flinksoftware.com{{ page.url }}#service",
+        "name": {{ include.name | jsonify | replace: "</", "<\/" }},
+        "serviceType": {{ include.service_type | jsonify | replace: "</", "<\/" }},
+        "description": {{ page.description | jsonify | replace: "</", "<\/" }},
+        "provider": { "@id": "https://flinksoftware.com/#organization" },
+        "areaServed": { "@type": "Country", "name": "Nederland" }
+      }{% if page.faq %},
+      {
+        "@type": "FAQPage",
+        "@id": "https://flinksoftware.com{{ page.url }}#faq",
+        "mainEntity": [
+          {% for item in page.faq %}
+          {
+            "@type": "Question",
+            "name": {{ item.q | jsonify | replace: "</", "<\/" }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | jsonify | replace: "</", "<\/" }} }
+          }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+      }{% endif %}
+    ]
+  }
+</script>

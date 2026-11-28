@@ -1,0 +1,266 @@
+---
+title: Applicatie moderniseren met AI | Flink Software
+permalink: /applicatie-moderniseren-met-ai
+description: Je legacy-applicatie moderniseren met AI, stap voor stap. Eerst gedrag vastleggen in tests, dan migreren. Start met een moderniseringsscan.
+cta_label: Plan een moderniseringsscan
+contact_topic: moderniseringsscan
+questions:
+  - title: Weet je precies welke bedrijfsregels in je applicatie zitten?
+    text: De mensen die het bouwden zijn vertrokken. De code is de enige plek waar nog staat hoe het werkt.
+  - title: Krijgen je versies nog beveiligingsupdates?
+    text: Elke maand op een versie buiten ondersteuning maakt de volgende audit lastiger en de stap naar actueel groter.
+  - title: Durft je team nog iets te wijzigen?
+    text: Een kleine aanpassing duurt weken en raakt iets op een plek waar niemand het verwacht.
+  - title: Past wat je wilt bouwen nog in het systeem?
+    text: Nieuwe producten, koppelingen of AI-toepassingen lopen vast op de techniek van toen.
+urgency:
+  - title: Ondersteuning loopt af
+    text: Voor Spring Boot 2 en 3 is de open-source ondersteuning gestopt, en .NET 8 en 9 zijn buiten ondersteuning. PHP 8.2 krijgt na 2026 geen beveiligingsupdates meer. Draai je op .NET of PHP, dan beoordelen we in de scan of bijwerken of vervangen de route is.
+  - title: De wet vraagt om grip
+    text: De Cyberbeveiligingswet is van kracht. Val je onder de wet, of lever je aan een organisatie die eronder valt? Dan moet je een versie buiten ondersteuning kunnen verantwoorden.
+  - title: Het analysewerk is betaalbaar geworden
+    text: Een systeem doorgronden zonder documentatie kostte maanden handwerk. Met AI gaat dat veel sneller. Een eerder afgewezen modernisering is daardoor een nieuwe afweging waard.
+# The list of the scan below is repeated in the first FAQ answer, and target_stack in the FAQ answer about other
+# languages. Change them together.
+steps:
+  - title: Moderniseringsscan
+    text: We lichten je applicatie door met AI en praten met de mensen die ermee werken. Je hoort wat de werkelijke staat is en welke route past. Het rapport mag je vrij gebruiken, ook met je eigen team of een andere partij.
+    list:
+      - Kaart van architectuur en afhankelijkheden
+      - Overzicht van technical debt en verouderde componenten
+      - Eerste security-analyse van de code
+      - Advies over de route, met de risico's per optie
+      - Roadmap met een bandbreedte voor tijd en investering
+  - title: Gedrag vastleggen
+    text: Voordat we één regel aanpassen, leggen we met tests vast wat je applicatie nu doet, inclusief de eigenaardigheden.
+    list:
+      - Tests die het huidige gedrag vastleggen
+      - Bedrijfsregels uit de code, door je team gevalideerd
+      - Documentatie die weer klopt
+  - title: Stapsgewijs migreren
+    text: We vernieuwen module voor module, terwijl je applicatie in gebruik blijft. Elk nieuw deel gaat live zodra het zich heeft bewezen.
+    list:
+      - Controle van elke pull request door onze engineers
+      - Equivalentierapport per stap
+      - Uitrol met feature flags of het strangler-fig-patroon
+      - Rollbackplan per stap
+  - title: Beveiligen en overdragen
+    text: Elke modernisering eindigt met een security audit van de nieuwe code. Daarna dragen we over aan je team, of blijven we het beheer doen.
+    list:
+      - Security audit met bewijs per bevinding
+      - Kritieke en hoge bevindingen opgelost met pull requests
+      - CI/CD-pipeline met geautomatiseerde tests
+      - Kennisoverdracht aan je team
+safeguards:
+  - title: Eerst tests, dan code
+    icon: shield
+    text: Het bestaande gedrag ligt vast in tests voordat er iets verandert. Een afwijking valt daardoor snel op.
+  - title: Aangetoond gelijk gedrag
+    icon: check-circle
+    text: Na elke stap krijg je een rapport met welk gedrag aantoonbaar gelijk is, wat deels is aangetoond en wat nog handwerk vraagt.
+  - title: Module voor module
+    icon: modules
+    text: Elke stap is klein genoeg om te overzien. Na elke stap draait je systeem, met het nieuwe deel of weer met het oude.
+  - title: Een weg terug
+    icon: undo
+    text: Bij elke stap hoort een rollbackplan. Het oude deel gaat pas uit als het nieuwe zich heeft bewezen.
+  - title: Onze engineers lezen elke wijziging
+    icon: eye
+    text: Onze engineers lezen en begrijpen alles wat AI oplevert, voordat het je codebase in gaat.
+  - title: Je applicatie blijft in gebruik
+    icon: refresh
+    text: Oud en nieuw draaien naast elkaar, zodat je organisatie kan doorwerken terwijl wij vernieuwen.
+ai_does:
+  - Je codebase lezen, onderdeel voor onderdeel
+  - Afhankelijkheden en datastromen in kaart brengen
+  - Bedrijfsregels uit de code halen en beschrijven
+  - Eerste versie van tests en documentatie schrijven
+  - Herhalend migratiewerk uitvoeren
+engineers_do:
+  - Bepalen wat blijft, wat verandert en wat verdwijnt
+  - Architectuur kiezen die bij je organisatie past
+  - Bedrijfsregels valideren, samen met je team
+  - Elke wijziging lezen en beoordelen
+  - Elke release naar productie zelf beoordelen
+control:
+  - title: Afspraken op papier
+    text: Voordat we je code lezen, tekenen we een NDA en een verwerkersovereenkomst. Daarin staat welke AI-modellen we gebruiken, waar je code wordt verwerkt, wie toegang heeft en wanneer we onze kopie verwijderen.
+  - title: Zonder persoonsgegevens en productiedata
+    text: Voor de scan is een momentopname van de code genoeg, zonder git-historie. Komen we in de code persoonsgegevens of productiedata tegen, dan stoppen we en hoor je dat zo snel mogelijk van ons. Tijdens de migratie werken we in je repository, en de namen in de git-historie vallen onder de verwerkersovereenkomst.
+  - title: Alleen onze eigen engineers
+    text: Aan je applicatie werken uitsluitend engineers van Flink Software, vanuit Nederland. Je hebt direct contact met de engineers die het werk doen.
+  - title: Zelf te hosten en te beheren
+    text: De doelstack is open source. Je kunt de applicatie zelf hosten, beheren en door een ander team laten overnemen.
+routes:
+  - title: Java 8, 11 of 17 naar een actuele LTS-versie
+    text: Bijwerken binnen dezelfde technologie. De code blijft, de versie en de afhankelijkheden worden actueel.
+  - title: Spring Boot 2 of 3 naar de actuele versie
+    text: Terug naar een versie met beveiligingsupdates, inclusief de bibliotheken die meebewegen.
+  - title: Van monoliet naar modulair
+    text: Eén groot systeem wordt een set onderdelen die je los van elkaar bouwt, test en uitrolt.
+  - title: Een andere taal of een ander framework
+    text: In de scan beoordelen we of bijwerken verantwoord is. Anders vervangen we gefaseerd, naar de doelstack hieronder.
+target_stack:
+  - title: Backend
+    text: Java op een actuele LTS-versie, met Spring Boot
+  - title: Frontend
+    text: TypeScript
+  - title: Data
+    text: PostgreSQL
+  - title: Uitrol
+    text: Docker-containers, op Kubernetes waar dat past, en een CI/CD-pipeline die je team zelf beheert
+faq:
+  - group: Moderniseringsscan
+    q: Wat krijgen we precies bij een moderniseringsscan?
+    a: Een kaart van de architectuur en de afhankelijkheden, een overzicht van technical debt en verouderde componenten, een eerste security-analyse van de code, een advies over de route en een roadmap met een bandbreedte voor tijd en investering. Na een korte kennismaking hoor je de investering en de doorlooptijd van de scan. De afspraken staan in de opdrachtbevestiging.
+  - q: Wat als de scan uitwijst dat moderniseren weinig oplevert?
+    a: Dan zeggen we dat. Je houdt een rapport over waarmee je kunt onderbouwen waarom je het systeem voorlopig laat zoals het is, en wanneer dat verandert.
+  - group: Aanpak
+    q: Kunnen we beter alles opnieuw bouwen?
+    a: Soms. Herbouwen loont als de techniek zelf het probleem is. Bijwerken of gefaseerd vervangen is meestal sneller en beter te overzien, omdat het bestaande systeem blijft draaien. Na de moderniseringsscan heb je elke route op papier, met de risico's erbij.
+  - q: Hoeveel doet AI en hoeveel doen jullie engineers?
+    a: AI doet het lees- en volumewerk. Dat zijn de analyse, de documentatie, de eerste versie van de tests en het herhalende migratiewerk. Onze engineers kiezen de architectuur, valideren de bedrijfsregels en lezen elke wijziging voordat die je codebase in gaat.
+  - q: Kan AI nieuwe technical debt maken?
+    a: Ja, als niemand meeleest. Daarom lezen onze engineers elke wijziging voordat die je codebase in gaat, en draaien de tests bij elke stap tegen oud en nieuw. Wat AI oplevert en wij zelf niet kunnen uitleggen, gaat er niet in.
+  - q: Hoe weten we dat de nieuwe applicatie hetzelfde doet als de oude?
+    a: Voordat we iets wijzigen, leggen we het huidige gedrag vast in tests. Die tests draaien tegen oud en nieuw. Na elke stap krijg je een rapport met welk gedrag aantoonbaar gelijk is, wat deels is aangetoond en wat nog handwerk vraagt.
+  - q: Blijft onze applicatie beschikbaar tijdens de migratie?
+    a: Ja, daar richten we de aanpak op in. We vernieuwen module voor module terwijl het bestaande systeem blijft draaien, en bij elke stap hoort een rollbackplan.
+  - group: Praktisch
+    q: Werkt dit ook als er nauwelijks tests of documentatie zijn?
+    a: Ja, juist dan levert het veel op. De code zelf is de bron. Uit die code maken we een beschrijving van het systeem en tests die het bestaande gedrag vastleggen.
+  - q: Ons systeem is in een andere taal dan Java geschreven. Kunnen jullie dan helpen?
+    a: Nieuwe software bouwen we met Java en Spring Boot, een frontend in TypeScript en PostgreSQL. In de scan beoordelen we of we je huidige systeem verantwoord kunnen bijwerken. Anders is gefaseerd vervangen meestal de route.
+  - q: Kan ons eigen team meewerken en het daarna overnemen?
+    a: Ja. We werken in je repository, met pull requests die je team kan meelezen. De overdracht hoort bij de laatste stap, met documentatie, tests en een CI/CD-pipeline die je team zelf beheert.
+  - group: Je code en de wet
+    q: Wat gebeurt er met onze broncode en data?
+    a: Dat leggen we schriftelijk vast voordat we beginnen, in een NDA en een verwerkersovereenkomst. Je weet welke AI-modellen we gebruiken, waar je code wordt verwerkt en wie toegang heeft. Bij ons werken uitsluitend onze eigen engineers met je code, vanuit Nederland. Je code blijft buiten de training van AI-modellen. Dat is contractueel vastgelegd met onze AI-leveranciers, die gegevens tijdelijk kunnen bewaren voor controle op misbruik. De code lever je aan zonder persoonsgegevens en productiedata.
+  - q: Van wie is de gemoderniseerde code?
+    a: Van jou. Je bestaande code was en blijft van jou. De code die we voor je applicatie schrijven wordt van jou zodra de opdracht is betaald, en dat leggen we vast in de opdrachtbevestiging. Ons eigen gereedschap en onze algemene kennis blijven van ons.
+  - q: Hoe helpt dit bij de Cyberbeveiligingswet of DORA?
+    a: Het kan je helpen bij de voorbereiding. Je software draait weer op versies met beveiligingsupdates, en de security audit aan het eind laat zien wat er binnen de scope is onderzocht en gevonden. Het rapport gebruik je in je eigen risicobeheer en richting je klanten. Welk bewijs een auditor of toezichthouder van je vraagt, bepaalt die zelf.
+---
+
+<main id="main">
+  {% include service-hero.html
+    line1="Applicatie"
+    line2="moderniseren"
+    lead="Je legacy-applicatie naar een moderne stack, stap voor stap. Na elke stap zie je wat aantoonbaar gelijk werkt."
+    secondary_label="Bekijk hoe we werken" %}
+
+  {% include clients-section.html note="Voor deze organisaties bouwden en vernieuwden we bedrijfskritische software." %}
+
+  <section id="insight" class="section-grid section-mb" aria-labelledby="insight-label">
+    {% capture heading %}Eerst vastleggen wat je applicatie doet, <span class="text-color-fade">dan pas veranderen.</span>{% endcapture %}
+    {% include section-head.html id="insight" label="02 Insight" heading=heading variant="a" %}
+    <div class="section-lead-col">
+      <p class="section-lead">
+        Met AI lezen we je codebase en brengen we in kaart wat het systeem doet, ook waar de documentatie ophoudt.
+        Onze engineers bepalen de architectuur, lezen elke wijziging en laten na elke stap zien welk gedrag
+        aantoonbaar gelijk is.
+      </p>
+    </div>
+    {% include equivalence-mockup.html %}
+    <div class="section-body mt-10 md:mt-16">
+      {% include rule-list.html items=page.questions two_cols=true %}
+    </div>
+  </section>
+
+  <section id="why-now" class="section-grid section-mb" aria-labelledby="why-now-label">
+    {% capture heading %}Hoe langer je wacht, <span class="text-color-fade">hoe groter de stap.</span>{% endcapture %}
+    {% include section-head.html id="why-now" label="03 Why now" heading=heading variant="c" lead="Drie dingen maken dit het moment om te beginnen." %}
+    <div class="section-body">
+      {% include rule-list.html items=page.urgency %}
+    </div>
+  </section>
+
+  <section id="process" class="relative section-mb py-5 md:py-10 xl:py-16" aria-labelledby="process-label">
+    <div class="section-band animate-reveal"></div>
+    <div class="section-grid">
+      {% capture heading %}Onze aanpak in vier stappen, met <span class="text-color-fade">resultaat per stap.</span>{% endcapture %}
+      {% include section-head.html id="process" label="04 Process" heading=heading variant="b" lead="Je begint klein, met een scan. Na elke stap heb je iets in handen en beslis je zelf over de volgende." label_class="text-neutral-600" %}
+      <div class="section-body">
+        {% include card-list.html items=page.steps numbered=true %}
+        <div class="mt-10">{% include cta.html label=page.cta_label %}</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="routes" class="section-grid section-mb" aria-labelledby="routes-label">
+    {% capture heading %}Vier routes naar <span class="text-color-fade">een actuele stack.</span>{% endcapture %}
+    {% include section-head.html id="routes" label="05 Routes" heading=heading variant="c" lead="Bijwerken binnen dezelfde technologie, gefaseerd vervangen of herbouwen op een nieuwe architectuur. Welke route past, hoor je na de moderniseringsscan." %}
+    <div class="section-body">
+      {% include rule-list.html items=page.routes two_cols=true %}
+      <h3 class="mt-16 mb-3 text-xl font-medium xl:text-2xl">Doelstack</h3>
+      <p class="mb-8 text-base leading-[1.6] text-neutral-800 2xl:text-xl">
+        Dit is ons vertrekpunt. De keuzes maken we samen met jou, als je wilt met je eigen ontwikkelaars erbij. Heeft
+        je organisatie een enterprise-architectuur of andere kaders, dan bouwen we daarbinnen, zodat het in je
+        landschap past.
+      </p>
+      {% include rule-list.html items=page.target_stack two_cols=true level=4 %}
+    </div>
+  </section>
+
+  <section id="safeguards" class="section-grid section-mb" aria-labelledby="safeguards-label">
+    {% capture heading %}Zo houden we het risico <span class="text-color-fade">zichtbaar en beheersbaar.</span>{% endcapture %}
+    {% include section-head.html id="safeguards" label="06 Safeguards" heading=heading variant="b" lead="Moderniseren is ingrijpen in software waar je organisatie op draait. Daarom staat bij elke stap vast hoe we aantonen dat het goed gaat." %}
+    <div class="section-body">
+      {% include icon-list.html items=page.safeguards %}
+    </div>
+  </section>
+
+  <section id="roles" class="section-grid section-mb" aria-labelledby="roles-label">
+    {% capture heading %}AI doet het leeswerk, <span class="text-color-fade">onze engineers beslissen.</span>{% endcapture %}
+    {% include section-head.html id="roles" label="07 Roles" heading=heading variant="a" %}
+    <div class="section-lead-col">
+      <p class="section-lead">
+        AI neemt het lees- en volumewerk over. Onze engineers lezen en begrijpen elke wijziging. Ze deden dit werk al
+        voordat AI er goed in werd.
+      </p>
+    </div>
+    {% include section-image.html
+      src="/img/tonny-garic-jspring-2025-800.webp"
+      src_large="/img/tonny-garic-jspring-2025-1600.webp"
+      alt="Tonny Garić in een Flink Software t-shirt staat lachend in gesprek met een bezoeker op een drukbezochte J-Spring."
+      width="800"
+      height="534" %}
+    <div class="section-body mt-10 md:mt-16">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+        {% include check-list.html title="Dit doet AI" items=page.ai_does %}
+        {% include check-list.html title="Dit doen onze engineers" items=page.engineers_do %}
+      </div>
+    </div>
+  </section>
+
+  <section id="security" class="section-grid section-mb" aria-labelledby="security-label">
+    {% capture heading %}Moderniseren en beveiligen <span class="text-color-fade">in één traject.</span>{% endcapture %}
+    {% include section-head.html id="security" label="08 Security" heading=heading variant="b" lead="Moderniseren zonder security-check verhuist oude lekken naar een nieuwe stack. Daarom eindigt elke modernisering met een security audit van de nieuwe code, door dezelfde engineers." %}
+    <div class="col-span-12 md:col-span-8 md:col-start-3 xl:col-span-5 xl:col-start-4">
+      {% include button-link.html href="/security-audit-met-ai" label="Lees over de security audit met AI" %}
+    </div>
+  </section>
+
+  <section id="control" class="section-grid section-mb" aria-labelledby="control-label">
+    {% capture heading %}Jouw code, <span class="text-color-fade">jouw regie.</span>{% endcapture %}
+    {% include section-head.html id="control" label="09 Control" heading=heading variant="c" lead="We werken voor organisaties waar broncode vertrouwelijk is. Je code blijft buiten de training van AI-modellen, en je weet vooraf wat ermee gebeurt." %}
+    <div class="section-body">
+      {% include rule-list.html items=page.control two_cols=true %}
+    </div>
+  </section>
+
+  <section id="faq" class="section-grid section-mb" aria-labelledby="faq-label">
+    {% capture heading %}Veelgestelde <span class="text-color-fade">vragen.</span>{% endcapture %}
+    {% include section-head.html id="faq" label="10 FAQ" heading=heading variant="b" %}
+    <div class="section-body mt-5 md:mt-8">
+      {% include faq-list.html items=page.faq %}
+    </div>
+  </section>
+
+  {% capture contact_heading %}Begin met een moderniseringsscan, <span class="text-color-fade">beslis daarna.</span>{% endcapture %}
+  {% include contact-block.html
+    heading=contact_heading
+    lead="Vertel ons welk systeem je zorgen baart. We kijken mee en zeggen eerlijk wat we zien, ook als het advies is om het systeem voorlopig te laten zoals het is." %}
+</main>
+
+{% include service-jsonld.html name="Applicatie moderniseren met AI" service_type="Softwaremodernisering" %}

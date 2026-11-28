@@ -1,0 +1,58 @@
+{% comment %}
+  Example of the end result of an audit, shown as cards on a bright blue panel: the report overview with
+  findings per severity and the retest that follows. The data is made up. The retest card deliberately sticks
+  out past the left edge of the panel.
+{% endcomment %}
+<figure
+  role="img"
+  aria-label="Voorbeeld van een auditrapport. Veertien bevindingen: twee kritiek, drie hoog, zes midden en drie laag. Daaronder de hertest, waarin de kritieke en hoge bevindingen zijn opgelost en opnieuw getest. Het rapport bevat een samenvatting voor de directie."
+  class="relative isolate rounded-[20px] bg-linear-to-br from-blue-300 via-primary to-blue-950 px-4 py-6 text-xs sm:px-7 sm:py-8 md:text-sm">
+
+  <div
+    class="ml-6 mock-card p-4 sm:ml-10 sm:p-5">
+    <div class="flex items-start justify-between gap-3">
+      <div>
+        <p class="text-neutral-600">Auditrapport</p>
+        <p class="mt-0.5 text-sm font-medium md:text-base">14 bevindingen</p>
+      </div>
+      <span class="shrink-0 rounded-full bg-blue-50 px-2.5 py-1 font-medium text-blue-700">Definitief</span>
+    </div>
+    <div class="mt-4 flex h-2 gap-0.5 overflow-hidden rounded-full">
+      <div class="w-[14%] bg-red-600"></div>
+      <div class="w-[21%] bg-orange-500"></div>
+      <div class="w-[43%] bg-amber-400"></div>
+      <div class="flex-1 bg-slate-300"></div>
+    </div>
+    <ul class="mt-3 grid gap-x-4 gap-y-1.5 text-neutral-600 min-[400px]:grid-cols-2">
+      <li class="flex items-center gap-1.5 whitespace-nowrap"><span class="size-2 rounded-full bg-red-600"></span>Kritiek · 2</li>
+      <li class="flex items-center gap-1.5 whitespace-nowrap"><span class="size-2 rounded-full bg-orange-500"></span>Hoog · 3</li>
+      <li class="flex items-center gap-1.5 whitespace-nowrap"><span class="size-2 rounded-full bg-amber-400"></span>Midden · 6</li>
+      <li class="flex items-center gap-1.5 whitespace-nowrap"><span class="size-2 rounded-full bg-slate-300"></span>Laag · 3</li>
+    </ul>
+  </div>
+
+  <div
+    class="relative -mt-2 mr-10 -ml-8 mock-card p-4 sm:mr-16 sm:-ml-12 sm:p-5">
+    <div class="flex items-center justify-between gap-3">
+      <p class="font-medium">Hertest</p>
+      <p class="font-medium text-green-700">5 van 5 dicht</p>
+    </div>
+    <ul class="mt-3 space-y-2">
+      {% assign retest = "Autorisatiecontrole bij orderdetails|SQL-injectie in zoekfilter|Sessie blijft geldig na uitloggen" | split: "|" %}
+      {% for line in retest %}
+      <li class="flex items-center gap-2">
+        {% include icon.html name="check" class="size-4 shrink-0 text-green-700" stroke="2" %}
+        <span class="truncate">{{ line }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="mt-4 flex flex-wrap justify-end gap-2">
+    <span class="mock-pill">
+      Samenvatting voor directie
+    </span>
+  </div>
+</figure>
+{% comment %} Hidden from screen readers: the label of the figure already starts with this word. {% endcomment %}
+<p class="mt-3 text-right text-xs text-neutral-600" aria-hidden="true">Voorbeeld</p>

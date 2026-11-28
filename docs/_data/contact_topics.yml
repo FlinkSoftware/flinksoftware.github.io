@@ -1,0 +1,8 @@
+# Services a visitor can arrive at the contact page for (/contact?onderwerp=...), with the line shown there and
+# the subject of the e-mail. A service page names its topic in its front matter as contact_topic.
+security-audit:
+  lead: Een security audit bespreken?
+  subject: Scopegesprek security audit
+moderniseringsscan:
+  lead: Een moderniseringsscan bespreken?
+  subject: Moderniseringsscan

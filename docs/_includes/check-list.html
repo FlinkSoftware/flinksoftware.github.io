@@ -1,0 +1,18 @@
+{% comment %}
+  List with a check mark per line. Parameters: title, items (a list of strings), level (heading level of the
+  title, 3 by default) and two_cols (true for two columns on medium screens only, as inside a price card;
+  "always" for two columns from small screens up).
+{% endcomment %}
+<div class="border-t border-neutral-900 pt-5">
+  {% assign level = include.level | default: 3 %}
+  <h{{ level }} class="mb-4 text-xl font-medium xl:text-2xl">{{ include.title }}</h{{ level }}>
+  <ul
+    class="grid gap-x-8 gap-y-2.5 text-base leading-[1.6] text-neutral-800 2xl:text-xl {% if include.two_cols == "always" %}sm:grid-cols-2{% elsif include.two_cols %}sm:grid-cols-2 lg:grid-cols-1{% endif %}">
+    {% for item in include.items %}
+    <li class="relative pl-8">
+      {% include icon.html name="check" class="absolute top-0.5 left-0 size-5 text-primary" %}
+      {{ item }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>

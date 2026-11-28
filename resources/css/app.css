@@ -58,6 +58,61 @@
     @apply text-neutral-500 mb-3 text-[32px] leading-[1.1] font-medium md:mb-5 md:text-5xl xl:text-[56px] 2xl:text-[80px];
 }
 
+@utility section-body {
+    /* Content column under a section heading */
+    /* The start column is repeated at xl on purpose: col-span sets the whole grid-column and so resets it. */
+    @apply col-span-12 md:col-span-10 md:col-start-3 xl:col-span-8 xl:col-start-3;
+}
+
+@utility section-lead-col {
+    /* Narrow lead under a section heading, with a photo or mock-up beside it */
+    @apply col-span-12 md:col-span-6 xl:col-span-5 xl:col-start-3;
+}
+
+@utility section-aside {
+    /* The photo or mock-up beside that lead */
+    @apply col-span-12 mt-5 p-6 md:col-span-6 md:mt-10 xl:col-span-5 xl:col-start-8 xl:-mt-15;
+}
+
+@utility section-band {
+    /* Tinted rounded band behind a section; the section itself needs `relative` */
+    @apply pointer-events-none absolute inset-y-0 left-1/2 z-[-1] w-full max-w-[1832px] -translate-x-1/2 bg-slate-100 md:w-[calc(100%-20px)] md:rounded-3xl xl:w-[calc(100%-40px)] 2xl:w-[calc(100%-88px)];
+}
+
+@utility step-number {
+    /* Numbered circle in front of a step */
+    @apply flex size-9 items-center justify-center rounded-full bg-primary font-display text-base font-semibold text-white;
+}
+
+@utility redacted {
+    /* Blacked-out name inside a heading: a bar as wide as the w-[..em] class next to it */
+    @apply inline-block h-[0.72em] rounded-[0.1em] bg-neutral-900 align-baseline;
+}
+
+@utility nda-box {
+    /* Empty place where a client logo would be */
+    @apply flex h-12 items-center justify-center rounded-lg border border-dashed border-neutral-400 font-mono text-xs tracking-wide text-neutral-500 uppercase;
+}
+
+@utility mock-card {
+    /* White card that floats over the photo or panel of a UI mock-up */
+    @apply rounded-2xl bg-white;
+    box-shadow:
+        0 0 0 1px var(--color-slate-200),
+        0 24px 48px -12px rgb(15 23 42 / 0.35),
+        0 8px 16px -8px rgb(15 23 42 / 0.2);
+}
+
+@utility mock-pill {
+    /* Small white label under the cards of a UI mock-up */
+    @apply rounded-full bg-white px-3 py-1.5 font-medium shadow-sm ring-1 ring-slate-200;
+}
+
+@utility text-link {
+    /* Underlined link that stands on its own line */
+    @apply text-base font-medium underline underline-offset-4;
+}
+
 @utility section-lead {
     /* Subtitles under H2 */
     @apply text-xl leading-[1.4] xl:text-2xl 2xl:text-[32px];
@@ -73,6 +128,74 @@
 
 @utility text-color-fade {
     @apply animate-[color-fade_linear_both] [animation-timeline:view()] [animation-range:entry_5%_cover_40%];
+}
+
+/* The word "AI" in the hero of a service page: the colours of the AI button's border as a gradient in the
+   text itself. The stops are the darker tints, so every part keeps 3:1 contrast on white, also while it moves.
+   The gradient is three times as wide as the word and slides along once after the page loads, then stays on
+   its last third. One pass of three seconds stays inside the five seconds of WCAG 2.2.2. */
+@utility text-ai-gradient {
+    background-image: linear-gradient(
+        100deg,
+        var(--color-primary),
+        var(--color-violet-500) 17%,
+        var(--color-cyan-600) 33%,
+        var(--color-violet-500) 50%,
+        var(--color-primary) 68%,
+        var(--color-violet-500) 85%,
+        var(--color-cyan-600)
+    );
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: ai-text-slide 3s ease-in-out 1;
+
+    @media (forced-colors: active) {
+        background-image: none;
+        color: CanvasText;
+    }
+
+    /* Browsers leave backgrounds out of print, which would leave the word invisible. */
+    @media print {
+        background-image: none;
+        color: var(--color-primary);
+    }
+}
+
+@keyframes ai-text-slide {
+    from {
+        background-position: 0 0;
+    }
+}
+
+/* Card outlined with the colours of the AI button's border, standing still. The gradient is painted in the
+   border area; the white layer on top covers the inside of the card. */
+@utility ai-outline {
+    border: 2px solid transparent;
+    background:
+        linear-gradient(var(--color-white), var(--color-white)) padding-box,
+        linear-gradient(
+                120deg,
+                var(--color-primary),
+                var(--color-blue-300),
+                var(--color-violet-500),
+                var(--color-cyan-400),
+                var(--color-primary)
+            )
+            border-box;
+    box-shadow: 0 0 28px -10px color-mix(in srgb, var(--color-blue-400) 60%, transparent);
+
+    /* Backgrounds are dropped in forced colours and in print, so fall back to a plain border there. */
+    @media (forced-colors: active) {
+        border-color: CanvasText;
+    }
+
+    @media print {
+        border-color: var(--color-primary);
+        box-shadow: none;
+    }
 }
 
 @utility animate-reveal {
@@ -176,6 +299,19 @@
     }
 }
 
+@keyframes ai-spin {
+    to {
+        rotate: 1turn;
+    }
+}
+
+/* The same turn under a second name, so hovering starts it again after the first one has ended. */
+@keyframes ai-spin-again {
+    to {
+        rotate: 1turn;
+    }
+}
+
 @keyframes color-fade {
     from {
         color: var(--color-neutral-500);
@@ -237,11 +373,64 @@
     .animate-marquee-logos, .animate-marquee-photos {
         will-change: transform;
     }
+
+    /* Menu button for the AI services: a dark pill with a slowly turning gradient as its border. The gradient
+       is a larger square behind the pill that rotates, so the animation needs no repaint. */
+    .ai-button {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        box-shadow: 0 0 14px -5px color-mix(in srgb, var(--color-blue-400) 50%, transparent);
+    }
+
+    .ai-button::before {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        aspect-ratio: 1;
+        translate: -50% -50%;
+        background: conic-gradient(
+            var(--color-primary),
+            var(--color-blue-300),
+            var(--color-violet-500),
+            var(--color-cyan-400),
+            var(--color-primary)
+        );
+        /* One turn after the page loads, then still. Movement that starts by itself and runs longer than five
+           seconds needs a pause control (WCAG 2.2.2), so it only keeps turning while hovered or focused. */
+        animation: ai-spin 4.5s linear 1;
+    }
+
+    .ai-button:focus-visible::before {
+        animation: ai-spin-again 6s linear infinite;
+    }
+
+    /* Only where a pointer can really hover: on a touch screen hover sticks after a tap. */
+    @media (hover: hover) and (pointer: fine) {
+        .ai-button:hover::before {
+            animation: ai-spin-again 6s linear infinite;
+        }
+    }
+
+    .ai-button::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 2px;
+        border-radius: inherit;
+        background: var(--color-neutral-900);
+    }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
     .animate-reveal,
-    .animate-progressive-scramble::after {
+    .animate-progressive-scramble::after,
+    .ai-button::before,
+    .text-ai-gradient {
         animation: none !important;
     }
 

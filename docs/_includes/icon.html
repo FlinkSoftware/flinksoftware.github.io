@@ -1,0 +1,4 @@
+{% comment %}
+  One outline icon from _data/icons.yml. Parameters: name, class and stroke (the stroke width, 1.5 by default).
+{% endcomment %}
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="{{ include.stroke | default: 1.5 }}" stroke="currentColor" class="{{ include.class }}" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="{{ site.data.icons[include.name] }}" /></svg>

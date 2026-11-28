@@ -29,203 +29,7 @@ description: Flink Software uit Nijmegen bouwt, beveiligt en schaalt bedrijfskri
       </div>
     </div>
   </section>
-  <section id="clients" class="section-mb overflow-hidden" aria-labelledby="clients-label">
-    <div class="section-grid mb-18.75">
-      <div class="relative col-span-12 md:col-span-9 md:col-start-3 xl:col-span-7 xl:col-start-3">
-        <div class="section-label-wrapper">
-          <span class="section-label-tag" id="clients-label" lang="en"><a href="#clients" class="hover:text-primary">01 Clients</a></span>
-        </div>
-        <h2 class="section-heading">
-          Gekozen door de meest <span class="text-color-fade">veeleisende opdrachtgevers.</span>
-        </h2>
-      </div>
-    </div>
-    <div
-      class="grid grid-cols-12 gap-x-4 gap-y-15 px-4 md:hidden [&_img]:w-auto [&_img]:max-w-40 [&_img]:object-contain [&_img]:opacity-50 [&_img]:grayscale">
-      <div class="col-span-6 flex items-center justify-center">
-        <img src="/img/ing.svg" alt="ING" loading="lazy" decoding="async" width="118" height="30" class="max-h-7.5" />
-      </div>
-      <div class="col-span-6 flex items-center justify-center">
-        <img
-          src="/img/belastingdienst.svg"
-          alt="Belastingdienst"
-          loading="lazy"
-          decoding="async"
-          width="86"
-          height="48"
-          class="h-12" />
-      </div>
-      <div class="col-span-6 flex items-center justify-center">
-        <img
-          src="/img/alliander.webp"
-          alt="Alliander"
-          loading="lazy"
-          decoding="async"
-          width="78"
-          height="30"
-          class="max-h-7.5" />
-      </div>
-      <div class="col-span-6 flex items-center justify-center">
-        <img
-          src="/img/s2f.svg"
-          alt="Service2Fruit"
-          loading="lazy"
-          decoding="async"
-          width="160"
-          height="27"
-          class="max-h-7.5" />
-      </div>
-      <div class="col-span-6 flex items-center justify-center">
-        <img
-          src="/img/kb.svg"
-          alt="Koninklijke Bibliotheek"
-          loading="lazy"
-          decoding="async"
-          width="104"
-          height="30"
-          class="max-h-7.5" />
-      </div>
-      <div class="col-span-6 flex items-center justify-center">
-        <img
-          src="/img/bmg.svg"
-          alt="Bank Mendes Gans"
-          loading="lazy"
-          decoding="async"
-          width="160"
-          height="16"
-          class="max-h-7.5" />
-      </div>
-      <div class="col-span-6 flex items-center justify-center">
-        <img
-          src="/img/kadaster.svg"
-          alt="Kadaster"
-          loading="lazy"
-          decoding="async"
-          width="52"
-          height="40"
-          class="max-h-10" />
-      </div>
-      <div class="col-span-6 flex items-center justify-center">
-        <img src="/img/gpx.svg" alt="GPX" loading="lazy" decoding="async" width="68" height="40" class="max-h-10" />
-      </div>
-      <div class="col-span-6 flex items-center justify-center">
-        <img
-          src="/img/planon.svg"
-          alt="Planon"
-          loading="lazy"
-          decoding="async"
-          width="113"
-          height="30"
-          class="max-h-7.5" />
-      </div>
-    </div>
-    <div class="hidden md:block">
-      <div class="w-full overflow-hidden">
-        <div
-          class="flex w-max animate-marquee-logos items-center gap-19 hover:[animation-play-state:paused] motion-reduce:animate-none md:gap-25 2xl:gap-35">
-          {% for i in (1..3) %}
-          <div
-            class="flex shrink-0 items-center gap-19 md:gap-25 2xl:gap-35 [&_img]:opacity-50 [&_img]:grayscale [&_img]:transition-all [&_img]:duration-300 [&_img:hover]:opacity-100 [&_img:hover]:grayscale-0"
-            {%
-            if
-            i>
-            1 %}aria-hidden="true"{% endif %}>
-            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
-              <img
-                src="/img/ing.svg"
-                alt="ING"
-                loading="lazy"
-                decoding="async"
-                width="118"
-                height="30"
-                class="h-full w-auto object-contain" />
-            </div>
-            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
-              <img
-                src="/img/belastingdienst.svg"
-                alt="Belastingdienst"
-                loading="lazy"
-                decoding="async"
-                width="633"
-                height="123"
-                class="h-full w-auto object-contain" />
-            </div>
-            <div class="flex h-[30px] shrink-0 items-center justify-center 2xl:h-10">
-              <img
-                src="/img/alliander.webp"
-                alt="Alliander"
-                loading="lazy"
-                decoding="async"
-                width="78"
-                height="30"
-                class="h-full w-auto object-contain" />
-            </div>
-            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
-              <img
-                src="/img/s2f.svg"
-                alt="Service2Fruit"
-                loading="lazy"
-                decoding="async"
-                width="179"
-                height="30"
-                class="h-full w-auto object-contain" />
-            </div>
-            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
-              <img
-                src="/img/kb.svg"
-                alt="Koninklijke Bibliotheek"
-                loading="lazy"
-                decoding="async"
-                width="104"
-                height="30"
-                class="h-full w-auto object-contain" />
-            </div>
-            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
-              <img
-                src="/img/bmg.svg"
-                alt="Bank Mendes Gans"
-                loading="lazy"
-                decoding="async"
-                width="308"
-                height="30"
-                class="h-full w-auto object-contain" />
-            </div>
-            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
-              <img
-                src="/img/kadaster.svg"
-                alt="Kadaster"
-                loading="lazy"
-                decoding="async"
-                width="39"
-                height="30"
-                class="h-full w-auto object-contain" />
-            </div>
-            <div class="flex h-[30px] shrink-0 items-center justify-center 2xl:h-10">
-              <img
-                src="/img/gpx.svg"
-                alt="GPX"
-                loading="lazy"
-                decoding="async"
-                width="51"
-                height="30"
-                class="h-full w-auto object-contain" />
-            </div>
-            <div class="flex h-7.5 shrink-0 items-center justify-center 2xl:h-10">
-              <img
-                src="/img/planon.svg"
-                alt="Planon"
-                loading="lazy"
-                decoding="async"
-                width="51"
-                height="30"
-                class="h-full w-auto object-contain" />
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </section>
+  {% include clients-section.html %}
   <section id="vision" class="section-grid section-mb" aria-labelledby="vision-label">
     <div class="relative col-span-12 md:col-span-10 md:col-start-3 xl:col-span-6 xl:col-start-2">
       <div class="section-label-wrapper">
@@ -236,22 +40,17 @@ description: Flink Software uit Nijmegen bouwt, beveiligt en schaalt bedrijfskri
         <span class="text-color-fade">robuuste architectuur en software.</span>
       </h2>
     </div>
-    <div class="col-span-12 md:col-span-6 xl:col-span-5 xl:col-start-3">
+    <div class="section-lead-col">
       <p class="section-lead">
         We ontwerpen, bouwen en optimaliseren bedrijfskritische applicaties binnen enterpriselandschappen, waarbij we
         doorgaan waar anderen vastlopen.
       </p>
     </div>
-    <div class="col-span-12 mt-5 animate-reveal p-6 md:col-span-6 md:mt-10 xl:col-span-5 xl:col-start-8 xl:-mt-15">
-      <img
-        src="/img/vision.webp"
-        alt="Lage-hoekfoto van moderne, glazen kantoorgebouwen die reflecteren in een blauwe lucht met wolken."
-        loading="lazy"
-        decoding="async"
-        width="667"
-        height="375"
-        class="h-full w-full rounded-[20px] object-cover" />
-    </div>
+    {% include section-image.html
+      src="/img/vision.webp"
+      alt="Lage-hoekfoto van moderne, glazen kantoorgebouwen die reflecteren in een blauwe lucht met wolken."
+      width="667"
+      height="375" %}
   </section>
   <section id="capabilities" class="section-grid section-mb" aria-labelledby="capabilities-label">
     <div class="relative col-span-12 md:col-span-10 md:col-start-3 xl:col-span-8 xl:col-start-4">
@@ -406,8 +205,11 @@ description: Flink Software uit Nijmegen bouwt, beveiligt en schaalt bedrijfskri
             Artificial Intelligence.
           </dt>
           <dd class="inline text-neutral-800">
-            We integreren AI-oplossingen veilig en naadloos binnen jouw bestaande landschap. Zo innoveer je processen
-            zonder concessies aan stabiliteit of dataprivacy.
+            Met AI
+            <a href="/applicatie-moderniseren-met-ai" class="underline underline-offset-4">moderniseren we bestaande applicaties</a>
+            en voeren we
+            <a href="/security-audit-met-ai" class="underline underline-offset-4">security audits</a> uit. Ook
+            integreren we AI veilig binnen jouw bestaande landschap, zonder concessies aan stabiliteit of dataprivacy.
           </dd>
         </div>
       </dl>
@@ -415,7 +217,7 @@ description: Flink Software uit Nijmegen bouwt, beveiligt en schaalt bedrijfskri
   </section>
   <section id="impact" class="relative section-mb py-5 md:py-10 xl:py-16" aria-labelledby="impact-label">
     <div
-      class="pointer-events-none absolute inset-y-0 left-1/2 z-[-1] w-full max-w-[1832px] -translate-x-1/2 animate-reveal bg-slate-100 opacity-100 md:w-[calc(100%-20px)] md:rounded-3xl xl:w-[calc(100%-40px)] 2xl:w-[calc(100%-88px)]"></div>
+      class="section-band animate-reveal"></div>
     <div class="section-grid">
       <div class="relative col-span-12 md:col-span-10 md:col-start-3 xl:col-span-6 xl:col-start-3">
         <div class="section-label-wrapper">
@@ -715,7 +517,7 @@ description: Flink Software uit Nijmegen bouwt, beveiligt en schaalt bedrijfskri
   </section>
   <section id="company" class="relative section-mb py-5 md:py-10" aria-labelledby="company-label">
     <div
-      class="pointer-events-none absolute inset-y-0 left-1/2 z-[-1] w-full max-w-[1832px] -translate-x-1/2 animate-reveal bg-slate-100 opacity-100 md:w-[calc(100%-20px)] md:rounded-3xl xl:w-[calc(100%-40px)] 2xl:w-[calc(100%-88px)]"></div>
+      class="section-band animate-reveal"></div>
     <div class="section-grid">
       <div class="relative col-span-12 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4">
         <div class="section-label-wrapper">
@@ -822,58 +624,7 @@ description: Flink Software uit Nijmegen bouwt, beveiligt en schaalt bedrijfskri
       </div>
     </div>
   </section>
-  <section id="contact" class="section-mb" aria-labelledby="contact-heading">
-    <div
-      class="mx-auto grid max-w-480 grid-cols-12 items-center gap-x-5 gap-y-15 px-3 md:px-5 lg:px-5 xl:px-10 2xl:px-22">
-      <div class="col-span-12 md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-5">
-        <h2 id="contact-heading" class="section-heading">Software waar veel van afhangt? <span class="text-color-fade whitespace-nowrap">Bel gerust.</span></h2>
-        <p class="mb-8 section-lead">Organisaties bellen ons als het erop aankomt. <span class="whitespace-nowrap">Eerder mag ook.</span></p>
-        <div class="flex flex-wrap items-center gap-6">
-          <a
-            href="tel:+31246757990"
-            class="inline-flex items-center gap-2 rounded-full bg-green-700 px-6 py-3 text-base font-medium text-white hover:bg-green-800">
-            <svg viewBox="0 0 24 24" fill="currentColor" class="-ml-0.5 size-5" aria-hidden="true">
-              <path
-                fill-rule="evenodd"
-                d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
-                clip-rule="evenodd"></path>
-            </svg>
-            024 - 675 79 90
-          </a>
-          <a href="mailto:info@flinksoftware.com" class="inline-flex items-center gap-x-2 text-base font-medium">
-            <svg
-              class="-ml-0.5 size-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              aria-hidden="true">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path>
-            </svg>
-            info@flinksoftware.com
-          </a>
-        </div>
-      </div>
-      <div class="col-span-6 md:order-first md:col-span-3 md:col-start-1 lg:col-start-2">
-        <img
-          class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
-          src="/img/tonny-garic.webp"
-          alt="Tonny Garić"
-          loading="lazy"
-          decoding="async"
-          width="208"
-          height="260" />
-        <div class="mt-3 ml-3">
-          <p class="text-base leading-[1.4] 2xl:text-xl">
-            <span class="font-medium">Tonny Garić</span>
-            <br />
-            Co-Founder
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% capture contact_heading %}Software waar veel van afhangt? <span class="text-color-fade whitespace-nowrap">Bel gerust.</span>{% endcapture %}
+  {% capture contact_lead %}Organisaties bellen ons als het erop aankomt. <span class="whitespace-nowrap">Eerder mag ook.</span>{% endcapture %}
+  {% include contact-block.html heading=contact_heading lead=contact_lead %}
 </main>

@@ -1,0 +1,12 @@
+# Client logos with the size they are shown at, in pixels. Each has its own height, so they look about equally
+# large: a wide logo is set lower and a compact one higher, roughly by the inverse square root of its
+# width-to-height ratio. featured marks the logos in the short row of _includes/client-logos.html.
+- { src: /img/ing.svg, alt: ING, width: 110, height: 28, featured: true }
+- { src: /img/belastingdienst.svg, alt: Belastingdienst, width: 83, height: 46 }
+- { src: /img/alliander.webp, alt: Alliander, width: 83, height: 32, featured: true }
+- { src: /img/s2f.svg, alt: Service2Fruit, width: 143, height: 24 }
+- { src: /img/kb.svg, alt: Koninklijke Bibliotheek, width: 104, height: 30, featured: true }
+- { src: /img/bmg.svg, alt: Bank Mendes Gans, width: 186, height: 18, featured: true }
+- { src: /img/kadaster.svg, alt: Kadaster, width: 57, height: 44, featured: true }
+- { src: /img/gpx.svg, alt: GPX, width: 68, height: 40 }
+- { src: /img/planon.svg, alt: Planon, width: 106, height: 28, featured: true }

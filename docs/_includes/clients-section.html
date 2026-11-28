@@ -1,0 +1,50 @@
+{% comment %}
+  The clients block of the homepage: the heading and the client logos, in a grid on small screens and a moving
+  row from medium screens up. The logos and their sizes come from _data/client_logos.yml.
+  Parameter: note (optional), one sentence under the heading that says what the work for these clients was.
+{% endcomment %}
+<section id="clients" class="section-mb overflow-hidden" aria-labelledby="clients-label">
+  <div class="section-grid mb-18.75">
+    <div class="relative col-span-12 md:col-span-9 md:col-start-3 xl:col-span-7 xl:col-start-3">
+      <div class="section-label-wrapper">
+        <span class="section-label-tag" id="clients-label" lang="en"><a href="#clients" class="hover:text-primary">01 Clients</a></span>
+      </div>
+      <h2 class="section-heading">
+        Gekozen door de meest <span class="text-color-fade">veeleisende opdrachtgevers.</span>
+      </h2>
+    </div>
+    {% if include.note %}
+    <div class="col-span-12 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-3">
+      <p class="section-lead">{{ include.note }}</p>
+    </div>
+    {% endif %}
+  </div>
+  <div
+    class="grid grid-cols-12 gap-x-4 gap-y-15 px-4 md:hidden [&_img]:w-auto [&_img]:max-w-40 [&_img]:object-contain [&_img]:opacity-50 [&_img]:grayscale">
+    {% for logo in site.data.client_logos %}
+    <div class="col-span-6 flex items-center justify-center">
+      <img src="{{ logo.src }}" alt="{{ logo.alt }}" loading="lazy" decoding="async" width="{{ logo.width }}" height="{{ logo.height }}" style="height: {{ logo.height }}px" />
+    </div>
+    {% endfor %}
+  </div>
+  <div class="hidden md:block">
+    <div class="w-full overflow-hidden">
+      <div
+        class="flex w-max animate-marquee-logos items-center gap-19 hover:[animation-play-state:paused] motion-reduce:animate-none md:gap-25 2xl:gap-35">
+        {% for i in (1..3) %}
+        <div
+          class="flex shrink-0 items-center gap-19 md:gap-25 2xl:gap-35 [&_img]:opacity-50 [&_img]:grayscale [&_img]:transition-all [&_img]:duration-300 [&_img:hover]:opacity-100 [&_img:hover]:grayscale-0"
+          {% if i > 1 %}aria-hidden="true"{% endif %}>
+          {% for logo in site.data.client_logos %}
+          <div
+            class="flex h-(--logo-h) shrink-0 items-center justify-center 2xl:h-[calc(var(--logo-h)*1.33)]"
+            style="--logo-h: {{ logo.height }}px">
+            <img src="{{ logo.src }}" alt="{{ logo.alt }}" loading="lazy" decoding="async" width="{{ logo.width }}" height="{{ logo.height }}" class="h-full w-auto object-contain" />
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

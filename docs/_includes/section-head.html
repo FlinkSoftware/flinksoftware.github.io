@@ -1,0 +1,28 @@
+{% comment %}
+  Section label, heading and optional lead, placed on the 12-column grid the way the homepage does it.
+  Use inside a section-grid. Parameters: id, label (for example "02 Scope"), heading (may contain HTML),
+  lead (optional), variant ("a", "b" or "c": which columns the block sits on, so sections alternate like on
+  the homepage) and label_class (optional, for a label on a tinted background).
+{% endcomment %}
+{% assign head_cols = "md:col-span-10 md:col-start-3 xl:col-span-6 xl:col-start-2" %}
+{% assign lead_cols = "md:col-span-8 md:col-start-3 xl:col-span-5 xl:col-start-3" %}
+{% if include.variant == "b" %}
+  {% assign head_cols = "md:col-span-10 md:col-start-3 xl:col-span-8 xl:col-start-4" %}
+  {% assign lead_cols = "md:col-span-8 md:col-start-3 xl:col-span-5 xl:col-start-4" %}
+{% elsif include.variant == "c" %}
+  {% assign head_cols = "md:col-span-10 md:col-start-3 xl:col-span-7 xl:col-start-3" %}
+  {% assign lead_cols = "md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-2" %}
+{% endif %}
+<div class="relative col-span-12 {{ head_cols }}">
+  <div class="section-label-wrapper">
+    <span class="section-label-tag {{ include.label_class }}" id="{{ include.id }}-label" lang="en"
+      ><a href="#{{ include.id }}" class="hover:text-primary">{{ include.label }}</a></span
+    >
+  </div>
+  <h2 class="section-heading">{{ include.heading }}</h2>
+</div>
+{% if include.lead %}
+<div class="col-span-12 {{ lead_cols }}">
+  <p class="mb-10 section-lead">{{ include.lead }}</p>
+</div>
+{% endif %}

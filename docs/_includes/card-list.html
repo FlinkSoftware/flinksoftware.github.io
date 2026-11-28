@@ -1,0 +1,26 @@
+{% comment %}
+  White cards for use on a tinted band. Each item has a title, a text and optionally a list of deliverables.
+  Parameters: items and numbered (true to number the cards as steps).
+{% endcomment %}
+{% if include.numbered %}<ol{% else %}<ul{% endif %} class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6">
+  {% for item in include.items %}
+  <li class="rounded-[20px] bg-white p-7 lg:p-8">
+    {% if include.numbered %}
+    <span class="mb-4 step-number" aria-hidden="true">{{ forloop.index }}</span>
+    {% endif %}
+    <h3 class="mb-2.5 text-xl font-medium xl:text-2xl">{{ item.title }}</h3>
+    <p class="text-sm leading-[1.6] text-neutral-800 md:text-base 2xl:text-xl">{{ item.text }}</p>
+    {% if item.list %}
+    <p class="mt-5 mb-2 text-sm font-medium md:text-base">Je krijgt</p>
+    <ul class="space-y-1.5 text-sm leading-[1.6] text-neutral-800 md:text-base 2xl:text-xl">
+      {% for entry in item.list %}
+      <li class="relative pl-7">
+        {% include icon.html name="check" class="absolute top-0.5 left-0 size-5 text-primary" %}
+        {{ entry }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+{% if include.numbered %}</ol>{% else %}</ul>{% endif %}

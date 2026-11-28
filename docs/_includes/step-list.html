@@ -1,0 +1,10 @@
+{% comment %} Numbered list of steps. Parameter: items, a list of entries with title and text. {% endcomment %}
+<ol class="space-y-8">
+  {% for item in include.items %}
+  <li class="relative pl-14">
+    <span class="absolute top-0 left-0 step-number" aria-hidden="true">{{ forloop.index }}</span>
+    <h3 class="mb-1.5 text-xl font-medium xl:text-2xl">{{ item.title }}</h3>
+    <p class="text-base leading-[1.6] text-neutral-800 2xl:text-xl">{{ item.text }}</p>
+  </li>
+  {% endfor %}
+</ol>

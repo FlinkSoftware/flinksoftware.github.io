@@ -1,0 +1,72 @@
+{% comment %}
+  Example of the report that follows a migration step, shown as cards over the page photo: how much of the
+  recorded behaviour is proven equal, and a few behaviours tested against old and new. The data is made up.
+  The second card deliberately sticks out past the right edge of the photo. Sits on the grid in the same place
+  as section-image.html.
+{% endcomment %}
+<div class="section-aside animate-reveal">
+  <figure
+    role="img"
+    aria-label="Voorbeeld van een equivalentierapport na een migratiestap. Van 240 vastgelegde gedragingen zijn er 212 aantoonbaar gelijk, 19 deels aangetoond en vragen 9 nog handwerk. Daaronder drie gedragingen die tegen oud en nieuw zijn getest. De wijziging is gelezen door engineers en er ligt een rollbackplan klaar."
+    class="relative isolate rounded-[20px] px-4 py-6 text-xs sm:px-7 sm:py-8 md:text-sm">
+    <img
+      src="/img/ai-moderniseren-800.webp"
+      srcset="/img/ai-moderniseren-800.webp 800w, /img/ai-moderniseren.webp 1200w"
+      sizes="(min-width: 80rem) 40vw, (min-width: 48rem) 50vw, 100vw"
+      alt=""
+      loading="lazy"
+      decoding="async"
+      width="1200"
+      height="800"
+      class="absolute inset-0 -z-10 h-full w-full rounded-[20px] object-cover" />
+
+    <div class="mock-card p-4 sm:p-5">
+      <div class="flex flex-wrap items-start justify-between gap-x-3 gap-y-2">
+        <div>
+          <p class="text-neutral-600">Equivalentierapport</p>
+          <p class="mt-0.5 text-sm font-medium md:text-base">Module Facturatie</p>
+        </div>
+        <span class="shrink-0 rounded-full bg-blue-50 px-2.5 py-1 font-medium whitespace-nowrap text-blue-700">Module 3 van 8</span>
+      </div>
+      <div class="mt-4 flex h-2 gap-0.5 overflow-hidden rounded-full">
+        <div class="w-[88%] bg-green-600"></div>
+        <div class="w-[8%] bg-amber-400"></div>
+        <div class="flex-1 bg-slate-300"></div>
+      </div>
+      <ul class="mt-3 grid gap-y-1.5 text-neutral-600">
+        <li class="flex items-center gap-1.5"><span class="size-2 shrink-0 rounded-full bg-green-600"></span>Aantoonbaar gelijk · 212</li>
+        <li class="flex items-center gap-1.5"><span class="size-2 shrink-0 rounded-full bg-amber-400"></span>Deels aangetoond · 19</li>
+        <li class="flex items-center gap-1.5"><span class="size-2 shrink-0 rounded-full bg-slate-300"></span>Vraagt handwerk · 9</li>
+      </ul>
+    </div>
+
+    <div class="relative -mt-2 -mr-8 ml-10 mock-card p-4 sm:-mr-12 sm:ml-16 sm:p-5">
+      <p class="font-medium">Getest tegen oud en nieuw</p>
+      <ul class="mt-3 space-y-2">
+        <li class="flex items-center justify-between gap-3">
+          <span class="truncate">Factuur met staffelkorting</span>
+          <span class="shrink-0 font-medium text-green-700">Gelijk</span>
+        </li>
+        <li class="flex items-center justify-between gap-3">
+          <span class="truncate">Afronding op halve centen</span>
+          <span class="shrink-0 font-medium text-green-700">Gelijk</span>
+        </li>
+        <li class="flex items-center justify-between gap-3">
+          <span class="truncate">Export naar de boekhouding</span>
+          <span class="shrink-0 font-medium text-amber-700">Deels</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-4 flex flex-wrap gap-2">
+      <span class="mock-pill">
+        Gelezen door engineers
+      </span>
+      <span class="mock-pill text-green-700">
+        Rollbackplan klaar
+      </span>
+    </div>
+  </figure>
+  {% comment %} Hidden from screen readers: the label of the figure already starts with this word. {% endcomment %}
+  <p class="mt-3 text-right text-xs text-neutral-600" aria-hidden="true">Voorbeeld</p>
+</div>

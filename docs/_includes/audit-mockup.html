@@ -1,0 +1,69 @@
+{% comment %}
+  Example of what an audit delivers, shown as cards over the page photo: one finding, the pull request that
+  fixes it and the status after review. The data is made up. The pull request card deliberately sticks out past the right edge of the photo. Sits on the grid in
+  the same place as section-image.html.
+{% endcomment %}
+<div class="section-aside animate-reveal">
+  <figure
+    role="img"
+    aria-label="Voorbeeld van een bevinding uit een auditrapport. Ernst hoog, CVSS-score 8,1: de autorisatiecontrole ontbreekt bij orderdetails in OrderController.java op regel 142, waardoor elke ingelogde gebruiker orders van andere klanten kan opvragen en wijzigen. Daaronder de pull request die het oplost, als vervolg op de audit, met geslaagde tests. De bevinding is bevestigd door een engineer en bij de hertest dicht."
+    class="relative isolate rounded-[20px] px-4 py-6 text-xs sm:px-7 sm:py-8 md:text-sm">
+    <img
+      src="/img/security-audit.webp"
+      alt=""
+      loading="lazy"
+      decoding="async"
+      width="1200"
+      height="800"
+      class="absolute inset-0 -z-10 h-full w-full rounded-[20px] object-cover" />
+
+    <div
+      class="mock-card p-4 sm:p-5">
+      <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-orange-50 px-2.5 py-1 font-medium text-orange-700">
+          <span class="size-1.5 rounded-full bg-orange-500"></span>Hoog
+        </span>
+        <span class="font-mono whitespace-nowrap text-neutral-600">CVSS 8.1 · CWE-639</span>
+      </div>
+      <p class="mt-3 text-sm font-medium md:text-base">Autorisatiecontrole ontbreekt bij orderdetails</p>
+      <p class="mt-1 leading-[1.5] text-neutral-600">
+        Elke ingelogde gebruiker kan orders van andere klanten opvragen en wijzigen.
+      </p>
+      <p
+        class="mt-3 inline-flex max-w-full items-center gap-1.5 rounded-md border border-slate-200 px-1.5 py-0.5 font-mono text-[11px] text-neutral-600 md:text-xs">
+        {% include icon.html name="code" class="size-3.5 shrink-0" %}
+        <span class="truncate">OrderController.java:142</span>
+      </p>
+    </div>
+
+    <div
+      class="relative -mt-2 -mr-8 ml-10 mock-card sm:-mr-12 sm:ml-16">
+      <div class="flex items-center justify-between gap-3 px-4 pt-4 sm:px-5">
+        <p class="font-medium">Pull request <span class="font-normal text-neutral-600">· vervolg</span></p>
+        <p class="font-mono text-[11px] md:text-xs">
+          <span class="text-green-700">+2</span> <span class="text-red-700">−1</span>
+        </p>
+      </div>
+      <div class="mt-3 font-mono text-[11px] leading-[1.7] md:text-xs">
+        <p class="truncate bg-red-50 px-4 text-red-800 sm:px-5">− orders.findById(id)</p>
+        <p class="truncate bg-green-50 px-4 text-green-800 sm:px-5">+ orders.findByIdAndOwner(id, user)</p>
+        <p class="truncate bg-green-50 px-4 text-green-800 sm:px-5">+ .orElseThrow(NotFound::new)</p>
+      </div>
+      <p class="flex items-center gap-1.5 px-4 pt-3 pb-4 font-medium text-green-700 sm:px-5">
+        {% include icon.html name="check" class="size-4" stroke="2" %}
+        Tests geslaagd
+      </p>
+    </div>
+
+    <div class="mt-4 flex flex-wrap gap-2">
+      <span class="mock-pill">
+        Bevestigd door engineer
+      </span>
+      <span class="mock-pill text-green-700">
+        Hertest: dicht
+      </span>
+    </div>
+  </figure>
+  {% comment %} Hidden from screen readers: the label of the figure already starts with this word. {% endcomment %}
+  <p class="mt-3 text-right text-xs text-neutral-600" aria-hidden="true">Voorbeeld</p>
+</div>

@@ -1,0 +1,16 @@
+{% comment %}
+  Ruled list of short items: a title and a text.
+  Parameters: items, two_cols (true for two columns; three by default) and level (heading level of the item
+  titles, 3 by default; 4 when the list stands under a heading of its own).
+{% endcomment %}
+{% assign rule_grid = "md:grid-cols-3" %}
+{% if include.two_cols %}{% assign rule_grid = "sm:grid-cols-2" %}{% endif %}
+<ul class="grid grid-cols-1 gap-8 {{ rule_grid }}">
+  {% assign rule_level = include.level | default: 3 %}
+  {% for item in include.items %}
+  <li class="border-t border-neutral-900 pt-5">
+    <h{{ rule_level }} class="text-xl font-medium xl:text-2xl">{{ item.title }}</h{{ rule_level }}>
+    <p class="mt-2.5 text-base leading-[1.6] text-neutral-800 2xl:text-xl">{{ item.text }}</p>
+  </li>
+  {% endfor %}
+</ul>
